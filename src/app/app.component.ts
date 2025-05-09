@@ -5,7 +5,7 @@ import { RouterModule} from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule], //CommonModule enable ngIf, ngFor and RouterModule enable routerLink, <router-outlet>
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
