@@ -1,0 +1,52 @@
+    
+app/
+    componets/
+        customer/
+            show-customer/
+                show-customer.component.ts			
+                show-customer.component.html
+                show-customer.component.css
+                show-customer.component.spec.ts
+            edit-customer/
+                edit-customer.component.ts			
+                edit-customer.component.html
+                edit-customer.component.css
+                edit-customer.component.spec.ts
+            add-customer/
+                add-customer.component.ts			
+                add-customer.component.html
+                add-customer.component.css
+                add-customer.component.spec.ts
+            customer.component.ts			
+            customer.component.html
+            customer.component.css
+            customer.component.spec.ts
+        reading/
+            show-reading/
+                show-reading.component.ts			
+                show-reading.component.html
+                show-reading.component.css
+                show-reading.component.spec.ts
+            edit-reading/
+                edit-reading.component.ts			
+                edit-reading.component.html
+                edit-reading.component.css
+                edit-reading.component.spec.ts
+            add-reading/
+                    add-reading.component.ts			
+                    add-reading.component.html
+                    add-reading.component.css
+                    add-reading.component.spec.ts
+            reading.component.ts			
+            reading.component.html
+            reading.component.css
+            reading.component.spec.ts
+    app.component.css
+    app.component.html
+    app.component.spec.ts
+    app.component.ts
+    app.config.ts
+    app.routes.ts
+index.html
+main.ts
+style.css
