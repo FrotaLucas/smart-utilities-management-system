@@ -1,1 +1,19 @@
-<p>show-customer works!</p>
+<button type="button" (click)="eventClick()" class="btn btn-primary float-right m-2" > Add two</button>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Family Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of myList">
+            <td>{{dataItem.name}}</td>
+            <td>{{dataItem.familyName}}</td>
+            <td>{{dataItem.age}}</td>
+        </tr>
+    </tbody>
+</table>
