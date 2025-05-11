@@ -13,13 +13,8 @@ import { Customer } from '../../../interfaces/customer';
 })
 export class AddCustomerComponent implements OnInit{
 
-  myList: Customer[] = listOfCustomers;
-
   ngOnInit(): void {
-    this.refreshComponeten();
-  }
+  };
 
-  refreshComponeten(){
-    this.myList = listOfCustomers;
-  }
+
 }
