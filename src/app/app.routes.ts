@@ -17,10 +17,13 @@ import { ReadingComponent } from './components/reading/reading.component';
 
 export const routes: Routes = [
     {
-      path: 'customer', component: ShowCustomerComponent,
+      path: 'customer', component: CustomerComponent,
       children: [
-        { path: 'add', component: AddCustomerComponent }
+        // { path: 'api', component: ComponentChildren inside of CustomerComponent, shared Tab }
       ]
+    },
+    {
+      path: 'customer/add', component: AddCustomerComponent
     },
     {
       path: 'reading', component: ReadingComponent
