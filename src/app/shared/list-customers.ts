@@ -3,28 +3,28 @@ import { Customer } from "../interfaces/customer";
 
 const listOfCustomers: Customer[] = [
     {
-        name: 'Lucas',
-        familyname: 'Dias',
+        name: 'Name',
+        familyName: 'Surname',
         age: 32
     },
      {
-        name: 'Lucas',
-        familyname: 'Dias',
+        name: 'Name',
+        familyName: 'Surname',
         age: 32
     },
      {
-        name: 'Lucas',
-        familyname: 'Dias',
+        name: 'Name',
+        familyName: 'Surname',
         age: 32
     },
      {
-        name: 'Lucas',
-        familyname: 'Dias',
+        name: 'Name',
+        familyName: 'Surname',
         age: 32
     },
      {
-        name: 'Lucas',
-        familyname: 'Dias',
+        name: 'Name',
+        familyName: 'Surname',
         age: 32
     }
 
