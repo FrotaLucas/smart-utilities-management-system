@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Customer } from '../../../interfaces/customer';
+import { listOfCustomers } from '../../../shared/list-customers';
 
 @Component({
   selector: 'app-show-customer',
@@ -8,4 +10,14 @@ import { Component } from '@angular/core';
 })
 export class ShowCustomerComponent {
 
+  myList: Customer[] = listOfCustomers;
+
+
+  ngOnit() : void{
+    this.refreshPage();
+  }
+
+  refreshPage() {
+    this.myList = listOfCustomers;
+  }
 }
