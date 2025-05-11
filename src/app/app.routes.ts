@@ -3,9 +3,9 @@ import { provideRouter } from '@angular/router';
 
 import { CustomerComponent } from './components/customer/customer.component';
 import { AddCustomerComponent } from './components/customer/add-customer/add-customer.component';
+import { ShowCustomerComponent } from './components/customer/show-customer/show-customer.component';
 
 import { ReadingComponent } from './components/reading/reading.component';
-import { ShowCustomerComponent } from './components/customer/show-customer/show-customer.component';
 
 
 //I am using standalone arquitecture
