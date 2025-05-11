@@ -22,8 +22,10 @@ export class ShowCustomerComponent {
     this.myList = listOfCustomers;
   }
 
-  public eventClick() {
+  eventClick() {
     this.nameTest = "New Name";
     console.log(this.nameTest);
   }
+
+
 }
