@@ -5,6 +5,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { AddCustomerComponent } from './components/customer/add-customer/add-customer.component';
 
 import { ReadingComponent } from './components/reading/reading.component';
+import { ShowCustomerComponent } from './components/customer/show-customer/show-customer.component';
 
 
 //I am using standalone arquitecture
@@ -16,7 +17,7 @@ import { ReadingComponent } from './components/reading/reading.component';
 
 export const routes: Routes = [
     {
-      path: 'customer', component: CustomerComponent,
+      path: 'customer', component: ShowCustomerComponent,
       children: [
         { path: 'add', component: AddCustomerComponent }
       ]
