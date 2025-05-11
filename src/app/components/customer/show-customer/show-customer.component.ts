@@ -26,7 +26,7 @@ export class ShowCustomerComponent {
     this.myList = listOfCustomers;
   }
 
-  public eventClick() {
+  public navigateTo() {
     this.router.navigate(['/customer/add']);
   }
 }
