@@ -1,5 +1,17 @@
-<button type="button" (click)="eventClick()" class="btn btn-primary float-right m-2" > Add two</button>
+<!-- listen click event -->
+<button type="button" (click)="eventClick()" >Button</button>
 
+<!-- listen event input-->
+<input type="text" (input)="eventInput($event)" placeholder="type a text">
+
+<!-- listen event of "keydow and keyup" from keyboard -->
+<input type="text"(keydown)="eventKeyDown($event)" (keyup)="eventKeyUp($event)" placeholder="press a key">
+
+<!-- list keyUp event-->
+<input type="text" (keyup)="eventKeyUp($event)" placeholder="leave a key">
+
+
+<p>{{text}}</p>
 
 <table class="table table-striped">
     <thead>

@@ -12,20 +12,34 @@ import { CommonModule } from '@angular/common';
 export class ShowCustomerComponent {
 
   myList: Customer[] = listOfCustomers;
-  nameTest: string = "mensage";
+  text: string = "mensage";
 
   ngOnit() : void{
     this.refreshPage();
   }
 
-  refreshPage() {
+  refreshPage() :void {
     this.myList = listOfCustomers;
   }
 
-  eventClick() {
-    this.nameTest = "New Name";
-    console.log(this.nameTest);
+  eventClick() : void {
+    this.text = "click from mouse";
   }
 
+  eventInput(event: Event) : void{
+      const input = event.target as HTMLInputElement;
 
+      this.text = `${input.value}`;
+
+  }
+
+  eventKeyDown(event: KeyboardEvent) : void{
+    const keydown = event.key;
+
+    this.text = `you pressed the key ${keydown}`;
+  }
+
+  eventKeyUp(event: KeyboardEvent) : void {
+    this.text = `you left the key ${event.key}`;
+  }
 }
