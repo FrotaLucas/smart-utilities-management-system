@@ -1,14 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { listOfCustomers } from '../../../shared/list-customers';
+import { Customer } from '../../../interfaces/customer';
 
 @Component({
   selector: 'app-add-customer',
-  //standalone: true,
-  imports: [],  //it works without CommomMOdule and RouterModule
+  standalone: true,
+  imports: [CommonModule],  //it works without CommomMOdule and RouterModule
   templateUrl: './add-customer.component.html',
   styleUrl: './add-customer.component.css'
 })
-export class AddCustomerComponent {
+export class AddCustomerComponent implements OnInit{
 
+  myList: Customer[] = listOfCustomers;
+
+  ngOnInit(): void {
+    this.refreshComponeten();
+  }
+
+  refreshComponeten(){
+    this.myList = listOfCustomers;
+  }
 }
