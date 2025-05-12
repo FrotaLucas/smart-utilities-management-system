@@ -1,1 +1,32 @@
-<p>add-customer works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="customer-form">
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Family Name</mat-label>
+    <input matInput formControlName="familyName" />
+  </mat-form-field>
+
+  <label>Gender</label>
+  <mat-radio-group formControlName="gender">
+    <mat-radio-button value="masculino">Masculino</mat-radio-button>
+    <mat-radio-button value="feminino">Feminino</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Birthdate</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="birthDate" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div style="margin-top: 20px;">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      Save
+    </button>
+  </div>
+
+</form>
