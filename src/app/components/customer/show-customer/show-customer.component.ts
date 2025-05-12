@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Customer } from '../../../interfaces/customer';
 import { listOfCustomers } from '../../../shared/list-customers';
 import { CommonModule } from '@angular/common';
@@ -18,9 +18,11 @@ export class ShowCustomerComponent {
 
   constructor (private router: Router){}
 
-  ngOnit() : void{
+  ngOnInit() : void{  //deveria importar o metodo ngOnit !!
     this.refreshPage();
   }
+
+  
 
   refreshPage() {
     this.myList = listOfCustomers;
