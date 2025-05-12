@@ -1,1 +1,24 @@
-<p>show-reading works!</p>
+<button type="button" (click)="navigateTo()" class="btn btn-primary float-right m-2" > Add Meter Reading</button>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Utility</th>
+            <th>Comment</th>
+            <th>Ref. Nº</th>
+            <th>Amount</th>
+            <th>Date of Reading</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let dataItem of myReading">
+            <td>{{dataItem.kindOfMeter}}</td>
+            <td>{{dataItem.comment}}</td>
+            <td>{{dataItem.meterId}}</td>
+            <td>{{dataItem.meterCount}}</td>
+            <td>{{dataItem.dateOfReading}}</td>
+        </tr>
+    </tbody>
+</table>
