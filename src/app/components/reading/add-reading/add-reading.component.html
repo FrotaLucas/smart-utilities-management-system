@@ -1,20 +1,33 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="reading-form">
+  
+  <mat-form-field>
+    <mat-label>Ref. Nº</mat-label>
+    <input matInput formControlName="meterId" />
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Kind Of Meter</mat-label>
+    <mat-select formControlName="kindOfMeter">
+      <mat-option value="Water">Water</mat-option>
+      <mat-option value="Eletricity">Eletricity</mat-option>
+    </mat-select>
+  </mat-form-field>
 
-<p>add-reading works!</p>
+  <mat-form-field>
+    <mat-label>Meter Count</mat-label>
+    <input matInput formControlName="meterCount" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Comment</mat-label>
+    <textarea matInput formControlName="comment"></textarea>
+  </mat-form-field>
+
 <mat-form-field>
-  <mat-label>Input</mat-label>
-  <input matInput>
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Select</mat-label>
-  <mat-select>
-    <mat-option value="one">First option</mat-option>
-    <mat-option value="two">Second option</mat-option>
-  </mat-select>
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Textarea</mat-label>
-  <textarea matInput></textarea>
+  <mat-label>Date of Reading</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="dateOfReading" />
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 
 <div style="margin-top: 20px;">
