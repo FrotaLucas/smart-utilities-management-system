@@ -1,24 +1,27 @@
-<div class="container">
-  Hellowe
+<div>
 
-  <h2>My App</h2>
+<header>
+  <h1>Smart Utilities</h1>
+  <p>your best energy management system</p>
+</header>
 
+<nav class="navbar navbar-expand-sm bg-light navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a routerLink="/customer"
+      class="m-1 btn btn-light btn-outline-primary">Customers</a>
+    </li>
+    
+    <li class="nav-item">
+      <a routerLink="/reading"
+      class="m-1 btn btn-light btn-outline-primary">Readings</a>
+    </li>
+  </ul>
+</nav>
 
-  <nav class="navbar navbar-expand-sm bg-light navbar-dark">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a routerLink="/customer"
-         class="m-1 btn btn-light btn-outline-primary">Customers</a>
-      </li>
-
-       <li class="nav-item">
-          <a routerLink="/reading"
-            class="m-1 btn btn-light btn-outline-primary">Readinds</a>
-       </li>
-    </ul>
-    </nav>
-
+<div class="inside-container">
     <router-outlet></router-outlet>
+</div>
 
 </div>
 
