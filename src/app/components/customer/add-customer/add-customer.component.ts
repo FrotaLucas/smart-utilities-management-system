@@ -35,6 +35,7 @@ export class AddCustomerComponent implements OnInit{
   form!: FormGroup;
   myList: Customer[] = listOfCustomers;
 
+  //pq formgroup nao entra tbm no construtor?
   constructor(private fb: FormBuilder){}
 
   ngOnInit(): void {
