@@ -10,7 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatButtonModule } from '@angular/material/button';//talvez nao precise!!
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-add-customer',
