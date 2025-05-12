@@ -1,7 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { listOfCustomers } from '../../../shared/list-customers';
+import { CommonModule } from '@angular/common';
 import { Customer } from '../../../interfaces/customer';
 
 
@@ -11,7 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';//talvez nao precise!!
 
 @Component({
   selector: 'app-add-customer',
