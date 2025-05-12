@@ -5,27 +5,32 @@ const listOfCustomers: Customer[] = [
     {
         name: 'Name',
         familyName: 'Surname',
-        age: 32
+        gender: "male",
+        birthDay: "01/02/1995"
     },
      {
         name: 'Name',
         familyName: 'Surname',
-        age: 32
+        gender: "male",
+        birthDay: "01/02/1995"
     },
      {
         name: 'Name',
         familyName: 'Surname',
-        age: 32
+        gender: "male",
+        birthDay: "01/02/1995"
     },
      {
         name: 'Name',
         familyName: 'Surname',
-        age: 32
+        gender: "male",
+        birthDay: "01/02/1995"
     },
      {
         name: 'Name',
         familyName: 'Surname',
-        age: 32
+        gender: "male",
+        birthDay: "01/02/1995"
     }
 
 ];

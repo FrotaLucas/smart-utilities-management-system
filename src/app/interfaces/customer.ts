@@ -1,5 +1,6 @@
 export interface Customer {
     name: string;
     familyName: string;
-    age: number;
+    gender: string;
+    birthDay: string;
 };
