@@ -19,6 +19,7 @@ header > h1 {
 header > p {
   color: white;
   font-size: 20px;
+  margin-bottom: 15px;
   /* font-family: var(--fonte-standart); */
 }
 
