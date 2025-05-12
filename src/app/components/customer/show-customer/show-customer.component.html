@@ -6,14 +6,16 @@
         <tr>
             <th>Name</th>
             <th>Family Name</th>
-            <th>Age</th>
+            <th>Gender</th>
+            <th>Birthday</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let dataItem of myList">
             <td>{{dataItem.name}}</td>
             <td>{{dataItem.familyName}}</td>
-            <td>{{dataItem.age}}</td>
+            <td>{{dataItem.gender}}</td>
+            <td>{{dataItem.birthDay}}</td>
         </tr>
     </tbody>
 </table>
