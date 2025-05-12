@@ -6,6 +6,7 @@ import { AddCustomerComponent } from './components/customer/add-customer/add-cus
 import { ShowCustomerComponent } from './components/customer/show-customer/show-customer.component';
 
 import { ReadingComponent } from './components/reading/reading.component';
+import { AddReadingComponent } from './components/reading/add-reading/add-reading.component';
 
 
 //I am using standalone arquitecture
@@ -27,6 +28,9 @@ export const routes: Routes = [
     },
     {
       path: 'reading', component: ReadingComponent
+    },
+    {
+      path: 'reading/add', component: AddReadingComponent
     }
     // { path: '', redirectTo: 'customer', pathMatch: 'full' },
     // { path: '**', redirectTo: 'customer' }
