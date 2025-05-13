@@ -1,8 +1,7 @@
 .customer-form {
   max-width: 500px;
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
+  margin-left: 20px;
   gap: 16px;
 }
 

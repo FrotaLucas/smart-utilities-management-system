@@ -1,6 +1,7 @@
 .reading-form {
   max-width: 500px;
   margin-top: 20px;
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
