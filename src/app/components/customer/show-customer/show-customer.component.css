@@ -1,0 +1,9 @@
+.show-container {
+  width: 80%; /* ou defina uma largura fixa como 600px /
+margin-left: auto;
+margin-right: auto;
+background-color: black;
+padding: 20px;
+color: white; / Para melhorar contraste com fundo preto */
+margin: auto;
+}
