@@ -4,9 +4,14 @@ import { listOfCustomers } from '../../../shared/list-customers';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-show-customer',
-  //standalone: true,
+  standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './show-customer.component.html',
   styleUrl: './show-customer.component.css'
