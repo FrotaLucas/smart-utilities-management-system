@@ -23,7 +23,7 @@ header > p {
   /* font-family: var(--fonte-standart); */
 }
 
-.pai {
+.innner-container {
     width: 100%;
     /* margin: 0 auto; */
 }
