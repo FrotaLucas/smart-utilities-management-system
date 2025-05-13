@@ -6,7 +6,7 @@ const listOfCustomers: Customer[] = [
         id: 1,
         name: 'Name',
         familyName: 'Surname',
-        gender: "male",
+        gender: "female",
         birthDate: "01-02-1995"
     },
     {
@@ -20,7 +20,7 @@ const listOfCustomers: Customer[] = [
         id: 3,
         name: 'Name',
         familyName: 'Surname',
-        gender: "male",
+        gender: "female",
         birthDate: "01-02-1995"
     },
     {
@@ -34,7 +34,7 @@ const listOfCustomers: Customer[] = [
         id: 5,
         name: 'Name',
         familyName: 'Surname',
-        gender: "male",
+        gender: "female",
         birthDate: "01-02-1995"
     }
 ];
