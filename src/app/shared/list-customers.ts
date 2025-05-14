@@ -4,21 +4,21 @@ import { Customer } from "../interfaces/customer";
 const listOfCustomers: Customer[] = [
     {
         id: 1,
-        name: 'Name',
+        name: 'Mary',
         familyName: 'Surname',
         gender: "female",
         birthDate: "01-02-1995"
     },
     {
         id: 2,
-        name: 'Name',
+        name: 'Jhon',
         familyName: 'Surname',
         gender: "male",
         birthDate: "01-02-1995"
     },
     {
         id: 3,
-        name: 'Name',
+        name: 'Helena',
         familyName: 'Surname',
         gender: "female",
         birthDate: "01-02-1995"
@@ -32,7 +32,7 @@ const listOfCustomers: Customer[] = [
     },
     {
         id: 5,
-        name: 'Name',
+        name: 'Richard',
         familyName: 'Surname',
         gender: "female",
         birthDate: "01-02-1995"
