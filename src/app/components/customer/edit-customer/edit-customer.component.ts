@@ -35,7 +35,7 @@ export class EditCustomerComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) private customer: Customer) { }
 
   ngOnInit(): void {
-    console.log('customer', this.customer);
+    //console.log('customer', this.customer);
     this.form = this.fb
     .group({name: [this.customer.name, Validators.required],
       familyName: [this.customer.familyName, Validators.required],
