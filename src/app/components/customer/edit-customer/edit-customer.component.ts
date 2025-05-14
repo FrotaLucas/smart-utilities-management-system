@@ -37,7 +37,7 @@ export class EditCustomerComponent implements OnInit {
   ngOnInit(): void {
     //console.log('customer', this.customer);
     this.form = this.fb
-    .group({name: [this.customer.name, Validators.required],
+    .group({name: [this.customer.firstName, Validators.required],
       familyName: [this.customer.familyName, Validators.required],
       gender: [this.customer.gender, Validators.required],
       birthDate: [this.customer.birthDate, Validators.required],

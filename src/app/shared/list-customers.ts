@@ -4,35 +4,35 @@ import { Customer } from "../interfaces/customer";
 const listOfCustomers: Customer[] = [
     {
         id: 1,
-        name: 'Mary',
+        firstName: 'Mary',
         familyName: 'Surname',
         gender: "female",
         birthDate: "01-02-1995"
     },
     {
         id: 2,
-        name: 'Jhon',
+        firstName: 'Jhon',
         familyName: 'Surname',
         gender: "male",
         birthDate: "01-02-1995"
     },
     {
         id: 3,
-        name: 'Helena',
+        firstName: 'Helena',
         familyName: 'Surname',
         gender: "female",
         birthDate: "01-02-1995"
     },
     {
         id: 4,
-        name: 'Name',
+        firstName: 'Name',
         familyName: 'Surname',
         gender: "male",
         birthDate: "01-02-1995"
     },
     {
         id: 5,
-        name: 'Richard',
+        firstName: 'Richard',
         familyName: 'Surname',
         gender: "female",
         birthDate: "01-02-1995"
