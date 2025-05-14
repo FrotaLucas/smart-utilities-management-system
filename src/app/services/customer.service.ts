@@ -32,4 +32,8 @@ export class CustomerService {
         );
     }
 
+    updateCustomer(customer: Customer): Observable<string> {
+        return this.http.put<string>(`${this.myApp}${this.myApi}`, customer);
+    }
+
 }
