@@ -1,7 +1,7 @@
 export interface Customer {
     id?: number;
     firstName: string;
-    familyName: string;
+    lastName: string;
     gender: string;
     birthDate: string;
 };

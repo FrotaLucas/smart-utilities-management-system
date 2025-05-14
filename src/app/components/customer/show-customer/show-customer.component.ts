@@ -39,7 +39,7 @@ export class ShowCustomerComponent {
     this.myList = listOfCustomers;
     this._customerService.getCustomers().subscribe( data =>{
       this.test = data;
-      console.log('hellow', this.test);
+      //console.log('hellow', this.test);
     }
      
     );
