@@ -15,8 +15,8 @@
   <mat-form-field appearance="fill" class="full-width">
     <mat-label>Gender</mat-label>
     <mat-select formControlName="gender">
-      <mat-option value="male">Male</mat-option>
-      <mat-option value="female">Female</mat-option>
+      <mat-option value="M">M</mat-option>
+      <mat-option value="W">W</mat-option>
     </mat-select>
   </mat-form-field>
 
@@ -26,6 +26,7 @@
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
+
 
   <div class="buttons">
     <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Save</button>
