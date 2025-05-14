@@ -16,15 +16,20 @@ export class CustomerService {
     private myApp: string;
     private myApi: string;
 
-    constructor(private http: HttpClient){
+    constructor(private http: HttpClient) {
         this.myApp = environment.endpoint;
         this.myApi = "api/customers";
     }
 
-   getCustomers(): Observable<Customer[]> {
-  return this.http.get<any>(`${this.myApp}${this.myApi}`).pipe(
-    map(response => response.properties.customers.items.properties)
-  );
-}
+    getCustomers(): Observable<Customer[]> {
+        return this.http.get<any>(`${this.myApp}${this.myApi}`).pipe(
+            map(response => response.properties.customers.items.properties)
+        );
+    }
+    deleteCustomer(uuid: string): Observable<Customer> {
+        return this.http.delete<any>(`${this.myApp}${this.myApi}/${uuid}`).pipe(
+            map(response => response.properties.customer.properties)
+        );
+    }
 
 }
