@@ -38,7 +38,7 @@ export class ShowCustomerComponent {
   refreshPage() {
     this._customerService.getCustomers().subscribe(data => {
       this.listOfCustomers = data;
-      console.log('list', this.listOfCustomers)
+      //console.log('list', this.listOfCustomers)
     }
     );
 
@@ -83,5 +83,14 @@ export class ShowCustomerComponent {
         }
       }
     })
+  }
+
+  editCustomerr(customer: Customer): void {
+    const dialogRef = this.dialog.open(EditCustomerComponent, {
+      width: '600px',
+      data: customer
+    });
+
+    this.refreshPage();
   }
 }
