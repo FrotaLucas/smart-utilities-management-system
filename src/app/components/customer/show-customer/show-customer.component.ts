@@ -24,7 +24,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ShowCustomerComponent {
 
-  test: any;
+  listOfCustomers!: Customer[];
 
   myList: Customer[] = listOfCustomers;
   nameTest: string = "mensage";
@@ -38,10 +38,8 @@ export class ShowCustomerComponent {
   refreshPage() {
     this.myList = listOfCustomers;
     this._customerService.getCustomers().subscribe( data =>{
-      this.test = data;
-      //console.log('hellow', this.test);
+      this.listOfCustomers = data;
     }
-     
     );
     
   }
