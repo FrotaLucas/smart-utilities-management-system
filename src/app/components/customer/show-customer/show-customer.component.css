@@ -7,3 +7,26 @@ padding: 20px;
 color: white; / Para melhorar contraste com fundo preto */
 margin: auto;
 }
+
+.icon {
+  cursor: pointer;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.edit-icon {
+  color: #1976d2; /* Azul Material Design (opcional) */
+  border: unset;
+  background-color: unset;
+}
+
+.delete-icon {
+  color: #e53935; /* Vermelho Material Design */
+  border: unset;
+  background-color: unset;
+
+}
+
+.icon:hover {
+  opacity: 0.2;
+}

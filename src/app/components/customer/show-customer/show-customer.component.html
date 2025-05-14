@@ -1,24 +1,35 @@
 <div class="show-container">
-    
-    <button type="button" (click)="navigateTo()" class="btn btn-primary float-right m-2" > Add Customer</button>
-    
-    
+
+    <button type="button" (click)="navigateTo()" class="btn btn-primary float-right m-2"> Add Customer</button>
+
+
     <table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Family Name</th>
-            <th>Gender</th>
-            <th>Birthdate</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let dataItem of myList">
-            <td>{{dataItem.name}}</td>
-            <td>{{dataItem.familyName}}</td>
-            <td>{{dataItem.gender}}</td>
-            <td>{{dataItem.birthDate}}</td>
-        </tr>
-    </tbody>
-</table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Family Name</th>
+                <th>Gender</th>
+                <th>Birthdate</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dataItem of myList">
+                <td>{{dataItem.name}}</td>
+                <td>{{dataItem.familyName}}</td>
+                <td>{{dataItem.gender}}</td>
+                <td>{{dataItem.birthDate}}</td>
+                <td>
+                    <div>
+                        <button mat-icon-button (click)="editCustomer(dataItem.id)" class="icon edit-icon"  matTooltip="Edit">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                         <button mat-icon-button (click)="deleteCustomer(dataItem.id)" class="icon delete-icon" matTooltip="Delete">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
