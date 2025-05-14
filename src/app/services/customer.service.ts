@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Customer } from "../interfaces/customer";
 import { Observable } from "rxjs";
 import { environment } from "../environments/environment";
+import { map } from "rxjs";
 
 //make sure the CustomerService is available globally in the project
 @Injectable({
@@ -21,7 +22,9 @@ export class CustomerService {
     }
 
    getCustomers(): Observable<Customer[]> {
+  return this.http.get<any>(`${this.myApp}${this.myApi}`).pipe(
+    map(response => response.properties.customers.items.properties)
+  );
+}
 
-    return this.http.get<Customer[]>(`${this.myApp}${this.myApi}`);
-   }
 }
