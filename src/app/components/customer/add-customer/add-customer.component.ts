@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { listOfCustomers } from '../../../shared/list-customers';
+import { list } from '../../../shared/list-customers';
 import { CommonModule } from '@angular/common';
 import { Customer } from '../../../interfaces/customer';
 
@@ -32,7 +32,7 @@ export class AddCustomerComponent implements OnInit{
 
   //why this ! symbol??
   form!: FormGroup;
-  myList: Customer[] = listOfCustomers;
+  myList: Customer[] = list;
 
   //pq formgroup nao entra tbm no construtor?
   constructor(private fb: FormBuilder){}

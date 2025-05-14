@@ -1,7 +1,7 @@
 import { Customer } from "../interfaces/customer";
 
 
-const listOfCustomers: Customer[] = [
+const list: Customer[] = [
     {
         id: 1,
         firstName: 'Mary',
@@ -40,4 +40,4 @@ const listOfCustomers: Customer[] = [
 ];
 
 
-export {listOfCustomers};
+export {list};
