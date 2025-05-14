@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Customer } from '../../../interfaces/customer';
+import { CustomerService } from '../../../services/customer.service';
 
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -31,8 +32,9 @@ export class EditCustomerComponent implements OnInit {
   form!: FormGroup;
 
   constructor(private fb: FormBuilder,
+    private _customerService: CustomerService,
     private dialogRef: MatDialogRef<EditCustomerComponent>,
-    @Inject(MAT_DIALOG_DATA) private customer: Customer) { }
+    @Inject(MAT_DIALOG_DATA) private customer: Customer,) { }
 
   ngOnInit(): void {
     //console.log('customer', this.customer);
@@ -46,6 +48,7 @@ export class EditCustomerComponent implements OnInit {
 
   saveChanges(): void {
     if(this.form.valid){
+       this._customerService.updateCustomer(this.customer).subscribe();
       this.dialogRef.close(this.form.value);
     }
   }
