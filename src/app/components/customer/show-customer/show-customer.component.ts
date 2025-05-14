@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../../../interfaces/customer';
-import { listOfCustomers } from '../../../shared/list-customers';
+import { list } from '../../../shared/list-customers';
 import { CustomerService } from '../../../services/customer.service';
 
 import { CommonModule } from '@angular/common';
@@ -26,7 +26,7 @@ export class ShowCustomerComponent {
 
   listOfCustomers!: Customer[];
 
-  myList: Customer[] = listOfCustomers;
+  myList: Customer[] = list;
   nameTest: string = "mensage";
 
   constructor (private router: Router, private dialog: MatDialog, private _customerService: CustomerService){}
@@ -36,9 +36,10 @@ export class ShowCustomerComponent {
   }
 
   refreshPage() {
-    this.myList = listOfCustomers;
+    this.myList = list;
     this._customerService.getCustomers().subscribe( data =>{
       this.listOfCustomers = data;
+      console.log('list', this.listOfCustomers)
     }
     );
     
