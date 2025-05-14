@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../../../interfaces/customer';
 import { listOfCustomers } from '../../../shared/list-customers';
+import { CustomerService } from '../../../services/customer.service';
+
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 
@@ -10,31 +12,38 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-show-customer',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatIconModule],
+  imports: [CommonModule, RouterModule, MatIconModule], 
   templateUrl: './show-customer.component.html',
   styleUrl: './show-customer.component.css'
 })
 export class ShowCustomerComponent {
 
+  test: any;
+
   myList: Customer[] = listOfCustomers;
   nameTest: string = "mensage";
 
-  constructor (private router: Router, private dialog: MatDialog){}
+  constructor (private router: Router, private dialog: MatDialog, private _customerService: CustomerService){}
 
   ngOnInit() : void{  //deveria importar o metodo ngOnit !!
     this.refreshPage();
   }
 
-  
-
   refreshPage() {
     this.myList = listOfCustomers;
+    this._customerService.getCustomers().subscribe( data =>{
+      this.test = data;
+      console.log('hellow', this.test);
+    }
+     
+    );
+    
   }
 
   public navigateTo() {
