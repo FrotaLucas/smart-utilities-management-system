@@ -90,7 +90,8 @@ export class ShowCustomerComponent implements OnInit{
       width: '600px',
       data: customer
     });
-
-    this.refreshPage();
+    
+    //angula atualiza sem precisar chamar esse metodo
+    //this.refreshPage();
   }
 }

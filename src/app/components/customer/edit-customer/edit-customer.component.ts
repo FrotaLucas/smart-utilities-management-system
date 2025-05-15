@@ -61,7 +61,7 @@ export class EditCustomerComponent implements OnInit {
       this.customer.firstName = this.form.value.firstName;
       this.customer.lastName = this.form.value.lastName;
       this.customer.gender = this.form.value.gender;
-      console.log('updated customer', this.customer);
+      //console.log('updated customer', this.customer);
 
       this._customerService.updateCustomer(this.customer).subscribe();
       this.dialogRef.close(this.form.value);
