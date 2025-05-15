@@ -27,4 +27,8 @@ export class ReadingService {
             map( response => response.properties.readings.items.properties)
         )
     }
+
+    deleteReading(uuid: string): Observable<void> {
+        return this.http.delete<void>(`${this.myApp}${this.myApi}/${uuid}`);
+    }
 }
