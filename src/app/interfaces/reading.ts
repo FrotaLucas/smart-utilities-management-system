@@ -9,5 +9,5 @@ export interface Reading {
     meterCount: number;
     substitute: boolean;
     dateOfReading: string;
-    customer?: Customer;
+    customer: Customer;
 }
