@@ -50,8 +50,24 @@ export class EditReadingComponent implements OnInit{
       })
   }
 
-  onSubmit(): void{
+  saveChanges(): void {
+    if (this.form.valid) {
+      this.reading.meterId = this.form.value.meterId;
+      this.reading.kindOfMeter = this.form.value.kindOfMeter;
+      this.reading.meterCount = this.form.value.meterCount;
+      this.reading.comment = this.form.value.comment;
+      this.reading.substitute = this.form.value.substitute;
+      this.reading.dateOfReading = this.form.value.dateOfReading;
+      
+      console.log('updated customer', this.reading);
 
+      //this._customerService.updateCustomer(this.customer).subscribe();
+      this.dialogRef.close(this.form.value);
+    }
+  }
+
+  cancel(): void {
+    this.dialogRef.close();
   }
 
 }
