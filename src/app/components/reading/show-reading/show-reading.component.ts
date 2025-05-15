@@ -5,9 +5,11 @@ import { Router, RouterModule } from '@angular/router';
 import { ReadingService } from '../../../services/reading.service';
 import { HttpClient } from '@angular/common/http';
 
+import { MatIconModule } from '@angular/material/icon';
+
 @Component({
   selector: 'app-show-reading',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MatIconModule],
   templateUrl: './show-reading.component.html',
   styleUrl: './show-reading.component.css'
 })
@@ -29,6 +31,14 @@ export class ShowReadingComponent implements OnInit {
     this._readingService.getReadings().subscribe( data => 
       this.listOfReading = data
     );
+  }
+
+  deleteReading(){
+
+  }
+
+  editReading(){
+
   }
 
   navigateTo(): void {
