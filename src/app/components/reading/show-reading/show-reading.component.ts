@@ -33,8 +33,13 @@ export class ShowReadingComponent implements OnInit {
     );
   }
 
-  deleteReading(){
-
+  deleteReading(uuid: string){
+      this._readingService.deleteReading(uuid).subscribe( result => {
+        console.log('reding deleted');
+        this.refreshPage();
+      }
+        
+      )
   }
 
   editReading(){
