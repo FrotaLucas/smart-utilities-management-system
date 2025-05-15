@@ -46,8 +46,12 @@ export class ShowReadingComponent implements OnInit {
     )
   }
 
-  editReading() {
-    this.dialog.open(EditReadingComponent)
+  editReading(reading: Reading) {
+    const dialogRef = this.dialog.open( EditReadingComponent, {
+      width: '600px',
+      data: reading
+    })
+    console.log(reading)
   }
 
   navigateTo(): void {
