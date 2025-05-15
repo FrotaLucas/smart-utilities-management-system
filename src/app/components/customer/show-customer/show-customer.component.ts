@@ -22,7 +22,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './show-customer.component.html',
   styleUrl: './show-customer.component.css'
 })
-export class ShowCustomerComponent {
+export class ShowCustomerComponent implements OnInit{
 
   listOfCustomers!: Customer[];
 
@@ -54,11 +54,12 @@ export class ShowCustomerComponent {
 
   deleteCustomer(uuid: string): void {
 
-    this._customerService.deleteCustomer(uuid).subscribe(customer =>
+    this._customerService.deleteCustomer(uuid).subscribe(customer =>{
       console.log('deleted customer', customer)
+      this.refreshPage()
+    }
     );
 
-    this.refreshPage();
   }
 
 
