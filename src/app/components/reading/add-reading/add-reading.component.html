@@ -1,6 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="reading-form">
-  
-   <mat-form-field>
+
+  <mat-form-field>
     <mat-label>Customer Id</mat-label>
     <input matInput formControlName="customerId" />
   </mat-form-field>
@@ -9,12 +9,14 @@
     <mat-label>Meter Id</mat-label>
     <input matInput formControlName="meterId" />
   </mat-form-field>
-  
+
   <mat-form-field>
     <mat-label>Kind Of Meter</mat-label>
     <mat-select formControlName="kindOfMeter">
-      <mat-option value="Water">Water</mat-option>
-      <mat-option value="Eletricity">Eletricity</mat-option>
+      <mat-option value="WASSER">WASSER</mat-option>
+      <mat-option value="STROM">STROM</mat-option>
+      <mat-option value="HEIZUNG">HEIZUNG</mat-option>
+      <mat-option value="UNBEKANNT">UNBEKANNT</mat-option>
     </mat-select>
   </mat-form-field>
 
@@ -28,17 +30,17 @@
     <textarea matInput formControlName="comment"></textarea>
   </mat-form-field>
 
-<mat-form-field>
-  <mat-label>Date of Reading</mat-label>
-  <input matInput [matDatepicker]="picker" formControlName="dateOfReading" />
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
+  <mat-form-field>
+    <mat-label>Date of Reading</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dateOfReading" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
 
-<div style="margin-top: 20px;">
+  <div style="margin-top: 20px;">
     <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
       Save
     </button>
-</div>
+  </div>
 
 </form>
