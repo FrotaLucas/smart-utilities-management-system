@@ -3,7 +3,7 @@ export interface Reading {
     customerId: number;
     kindOfMeter: string;
     comment: string;
-    meterId: number;
+    meterId: string;
     meterCount: number;
     substitute: boolean;
     dateOfReading: string;
