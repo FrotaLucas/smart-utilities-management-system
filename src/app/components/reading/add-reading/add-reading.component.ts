@@ -72,9 +72,18 @@ export class AddReadingComponent implements OnInit {
 
       if( !this.form.value.customerId){
         console.log('no user');
-        this.dialog.open(AddCustomerComponent, {
-          width: '600px',
+
+        const dialogRef = this.dialog.open(AddCustomerComponent, {
+          width: '800px',
+          data: {
+            reading: reading,
+            isNewCustomer: false
+          }
         });
+
+        dialogRef.afterClosed().subscribe(()=> {
+          this.form.reset()
+        })
       }
 
       else{
