@@ -3,6 +3,7 @@ import { Reading } from "../interfaces/reading"
 const listOfreading: Reading[] = [
   {
     uuid: 'uuid',
+    customerId: 111,
     kindOfMeter: "Energy",
     comment: "Routine monthly reading",
     meterId: 101,
@@ -12,6 +13,7 @@ const listOfreading: Reading[] = [
   },
   {
     uuid: 'uuid',
+    customerId: 222,
     kindOfMeter: "Water",
     comment: "Slightly higher than usual",
     meterId: 202,
@@ -21,6 +23,7 @@ const listOfreading: Reading[] = [
   },
   {
     uuid: 'uuid',
+    customerId: 333,
     kindOfMeter: "Energy",
     comment: "After maintenance",
     meterId: 101,
@@ -30,6 +33,7 @@ const listOfreading: Reading[] = [
   },
   {
     uuid: 'uuid',
+    customerId: 444,
     kindOfMeter: "Water",
     comment: "Normal usage",
     meterId: 202,
@@ -39,6 +43,7 @@ const listOfreading: Reading[] = [
   },
   {
     uuid: 'uuid',
+    customerId: 555,
     kindOfMeter: "Energy",
     comment: "New tenant started",
     meterId: 103,
