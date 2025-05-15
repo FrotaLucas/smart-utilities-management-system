@@ -26,8 +26,8 @@ export class ShowCustomerComponent implements OnInit{
 
   listOfCustomers!: Customer[];
 
-  myList: Customer[] = list;
-  nameTest: string = "mensage";
+  //myList: Customer[] = list;
+  //nameTest: string = "mensage";
 
   constructor(private router: Router, private dialog: MatDialog, private _customerService: CustomerService) { }
 
@@ -59,34 +59,33 @@ export class ShowCustomerComponent implements OnInit{
       this.refreshPage()
     }
     );
-
   }
 
 
-  editCustomer(id?: number): void {
-    const customer = this.myList.find(item => item.id === id);
+  // editCustomer(id?: number): void {
+  //   const customer = this.myList.find(item => item.id === id);
 
-    //dialog passa o customer dentro do campo data
-    const dialogRef = this.dialog.open(EditCustomerComponent, {
-      width: '600px',
-      data: customer
-    });
+  //   //dialog passa o customer dentro do campo data
+  //   const dialogRef = this.dialog.open(EditCustomerComponent, {
+  //     width: '600px',
+  //     data: customer
+  //   });
 
-    //dialogRef recebe de volta o customer editado
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
+  //   //dialogRef recebe de volta o customer editado
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     if (result) {
 
-        //encontar o indice na lista Mylist
-        const index = this.myList.findIndex(item => item.id === id);
-        //se encontrar algo
-        if (index !== -1) {
-          this.myList[index] = result;
-        }
-      }
-    })
-  }
+  //       //encontar o indice na lista Mylist
+  //       const index = this.myList.findIndex(item => item.id === id);
+  //       //se encontrar algo
+  //       if (index !== -1) {
+  //         this.myList[index] = result;
+  //       }
+  //     }
+  //   })
+  // }
 
-  editCustomerr(customer: Customer): void {
+  editCustomer(customer: Customer): void {
     const dialogRef = this.dialog.open(EditCustomerComponent, {
       width: '600px',
       data: customer
