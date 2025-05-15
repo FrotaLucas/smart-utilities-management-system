@@ -39,21 +39,36 @@ export class EditCustomerComponent implements OnInit {
   ngOnInit(): void {
     //console.log('customer', this.customer);
     this.form = this.fb
-    .group({firstName: [this.customer.firstName, Validators.required],
-      lastName: [this.customer.lastName, Validators.required],
-      gender: [this.customer.gender, Validators.required],
-      birthDate: [this.customer.birthDate, Validators.required],
-    })
+      .group({
+        firstName: [this.customer.firstName, Validators.required],
+        lastName: [this.customer.lastName, Validators.required],
+        gender: [this.customer.gender, Validators.required],
+        birthDate: [this.customer.birthDate, Validators.required],
+      })
+  }
+
+  formatDate(date: Date): string {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // mês começa em 0
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`;
   }
 
   saveChanges(): void {
-    if(this.form.valid){
-       this._customerService.updateCustomer(this.customer).subscribe();
+    if (this.form.valid) {
+      
+      this.customer.birthDate = this.formatDate(new Date(this.form.value.birthDate));
+      this.customer.firstName = this.form.value.firstName;
+      this.customer.lastName = this.form.value.lastName;
+      this.customer.gender = this.form.value.gender;
+      console.log('updated customer', this.customer);
+
+      this._customerService.updateCustomer(this.customer).subscribe();
       this.dialogRef.close(this.form.value);
     }
   }
 
-  cancel(): void{
+  cancel(): void {
     this.dialogRef.close();
   }
 }
