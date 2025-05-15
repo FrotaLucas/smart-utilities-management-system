@@ -31,4 +31,8 @@ export class ReadingService {
     deleteReading(uuid: string): Observable<void> {
         return this.http.delete<void>(`${this.myApp}${this.myApi}/${uuid}`);
     }
+
+    updateReading(reading: Reading): Observable<void> {
+         return this.http.put<void>(`${this.myApp}${this.myApi}`, reading);
+    }
 }
