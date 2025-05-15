@@ -35,4 +35,10 @@ export class ReadingService {
     updateReading(reading: Reading): Observable<void> {
          return this.http.put<void>(`${this.myApp}${this.myApi}`, reading);
     }
+
+    addReading(reading: Reading): Observable<Reading> {
+        return this.http.post<any>(`${this.myApp}${this.myApi}`, reading).pipe(
+            map( response => response.properties.reading.properties)
+        )
+    }
 }
