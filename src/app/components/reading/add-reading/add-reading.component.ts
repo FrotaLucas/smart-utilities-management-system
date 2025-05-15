@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { listOfreading } from '../../../shared/list-readings';
 import { CommonModule } from '@angular/common';
 import { Reading } from '../../../interfaces/reading';
-
+import { ReadingService } from '../../../services/reading.service';
 
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
@@ -31,7 +31,7 @@ export class AddReadingComponent implements OnInit{
   form!: FormGroup;
   mylist: Reading[] = listOfreading;
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private _readingService: ReadingService){}
 
   ngOnInit(): void {
     this.form = this.fb
@@ -39,17 +39,45 @@ export class AddReadingComponent implements OnInit{
       customerId: [''],
       kindOfMeter: ['', Validators.required],
       meterCount: ['', Validators.required],
-      comment: ['', Validators.required],  //nao requerido!!
+      comment: [''],  //nao requerido!!
       dateOfReading: ['', Validators.required],
     }
     )
   }
 
+  formatDate(date: Date): string {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // mês começa em 0
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`;
+  }
+
   onSubmit(): void {
     if(this.form.valid){
       const reading: Reading = this.form.value;
-      this.mylist.push(reading);
-      console.log('new reading addes');
+      reading.substitute = false;
+
+      if (!reading.customer) {
+      reading.customer = {
+        id: 0,
+        uuid: '',
+        firstName: '',
+        lastName: '',
+        birthDate: '',
+        gender: ''
+      };
+    }
+
+      reading.customer.id = this.form.value.customerId;
+      reading.customer.birthDate = "1990-01-01";
+      reading.customer.gender = "M";
+
+      reading.dateOfReading = this.formatDate( new Date(reading.dateOfReading));
+
+      this._readingService.addReading(reading).subscribe();
+
+      //this.mylist.push(reading);
+      console.log('new reading addes', reading);
     }
   }
  
