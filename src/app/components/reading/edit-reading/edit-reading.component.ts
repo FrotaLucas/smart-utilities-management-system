@@ -68,7 +68,7 @@ export class EditReadingComponent implements OnInit {
       this.reading.substitute = this.form.value.substitute;
       this.reading.dateOfReading = this.formatDate(new Date(this.form.value.dateOfReading))
 
-      console.log('updated customer', this.reading);
+      //console.log('updated customer', this.reading);
 
       this._readingService.updateReading(this.reading).subscribe();
       this.dialogRef.close(this.form.value);
