@@ -44,11 +44,11 @@ export class AddCustomerComponent implements OnInit {
   //pq formgroup nao entra tbm no construtor?
   constructor(private fb: FormBuilder, private _customerService: CustomerService,
     private _readingService: ReadingService,
-    @Optional() @Inject(MAT_DIALOG_DATA) private data: { reading: Reading | null, isNewcustomer: boolean },
+    @Optional() @Inject(MAT_DIALOG_DATA) private data: { reading: Reading | null, isNewCustomer: boolean } | null,
     @Optional() private dialogRef: MatDialogRef<AddCustomerComponent>) {
     //this.reading = this.data.reading || null;
-    this.reading = this.data.reading;
-    this.isNewCustomer = this.data.isNewcustomer;
+    this.reading = this.data?.reading ?? null
+    this.isNewCustomer = this.data?.isNewCustomer ?? true;
   }
 
   ngOnInit(): void {
@@ -74,7 +74,7 @@ export class AddCustomerComponent implements OnInit {
       customer.birthDate = this.formatDate(new Date(customer.birthDate));
 
       //se existir esse componente abrir e  reading tiver algum valor
-      if (this.data.reading) {
+      if (this.data?.reading) {
         this.data.reading.customer.firstName = customer.firstName;
         this.data.reading.customer.lastName = customer.lastName;
         this.data.reading.customer.gender = customer.gender;
