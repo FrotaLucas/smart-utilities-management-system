@@ -7,6 +7,7 @@ const listOfreading: Reading[] = [
     comment: "Routine monthly reading",
     meterId: 101,
     meterCount: 15230,
+    substitute: true,
     dateOfReading: "01-05-2025"
   },
   {
@@ -15,6 +16,7 @@ const listOfreading: Reading[] = [
     comment: "Slightly higher than usual",
     meterId: 202,
     meterCount: 847,
+    substitute: true,
     dateOfReading: "01-05-2025"
   },
   {
@@ -23,6 +25,7 @@ const listOfreading: Reading[] = [
     comment: "After maintenance",
     meterId: 101,
     meterCount: 15400,
+    substitute: true,
     dateOfReading: "01-06-2024"
   },
   {
@@ -31,6 +34,7 @@ const listOfreading: Reading[] = [
     comment: "Normal usage",
     meterId: 202,
     meterCount: 900,
+    substitute: true,
     dateOfReading: "01-06-2024"
   },
   {
@@ -39,6 +43,7 @@ const listOfreading: Reading[] = [
     comment: "New tenant started",
     meterId: 103,
     meterCount: 500,
+    substitute: true,
     dateOfReading: "10-05-2025"
   }
 ];
