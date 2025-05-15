@@ -36,4 +36,10 @@ export class CustomerService {
         return this.http.put<string>(`${this.myApp}${this.myApi}`, customer);
     }
 
+    addCustomer(customer: Customer): Observable<Customer> {
+        return this.http.post<any>(`${this.myApp}${this.myApi}`, customer).pipe(
+            map( response => response.properties.customer.properties)
+        )
+    }
+
 }
