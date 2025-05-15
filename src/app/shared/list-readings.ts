@@ -2,6 +2,7 @@ import { Reading } from "../interfaces/reading"
 
 const listOfreading: Reading[] = [
   {
+    uuid: 'uuid',
     kindOfMeter: "Energy",
     comment: "Routine monthly reading",
     meterId: 101,
@@ -9,6 +10,7 @@ const listOfreading: Reading[] = [
     dateOfReading: "01-05-2025"
   },
   {
+    uuid: 'uuid',
     kindOfMeter: "Water",
     comment: "Slightly higher than usual",
     meterId: 202,
@@ -16,6 +18,7 @@ const listOfreading: Reading[] = [
     dateOfReading: "01-05-2025"
   },
   {
+    uuid: 'uuid',
     kindOfMeter: "Energy",
     comment: "After maintenance",
     meterId: 101,
@@ -23,6 +26,7 @@ const listOfreading: Reading[] = [
     dateOfReading: "01-06-2024"
   },
   {
+    uuid: 'uuid',
     kindOfMeter: "Water",
     comment: "Normal usage",
     meterId: 202,
@@ -30,6 +34,7 @@ const listOfreading: Reading[] = [
     dateOfReading: "01-06-2024"
   },
   {
+    uuid: 'uuid',
     kindOfMeter: "Energy",
     comment: "New tenant started",
     meterId: 103,
