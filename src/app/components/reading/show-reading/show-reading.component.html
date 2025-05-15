@@ -27,7 +27,7 @@
                 <td>{{dataItem.dateOfReading}}</td>
                 <td>
                     <div>
-                        <button mat-icon-button (click)="editReading()" class="icon edit-icon" matTooltip="Edit">
+                        <button mat-icon-button (click)="editReading(dataItem)" class="icon edit-icon" matTooltip="Edit">
                             <mat-icon>edit</mat-icon>
                         </button>
                         <button mat-icon-button (click)="deleteReading(dataItem.uuid)" class="icon delete-icon" matTooltip="Delete">
