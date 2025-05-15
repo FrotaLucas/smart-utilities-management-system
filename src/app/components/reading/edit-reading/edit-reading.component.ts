@@ -45,7 +45,8 @@ export class EditReadingComponent implements OnInit{
         kindOfMeter: [this.reading.kindOfMeter, Validators.required],
         meterCount: [this.reading.meterCount, Validators.required],
         comment: [this.reading.comment],
-        substitute: [this.reading.substitute, Validators.required]
+        substitute: [this.reading.substitute, Validators.required],
+        dateOfReading: [this.reading.dateOfReading, Validators.required],
       })
   }
 
