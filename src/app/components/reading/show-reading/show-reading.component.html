@@ -7,8 +7,9 @@
             <tr>
                 <th>Utility</th>
                 <th>Comment</th>
-                <th>Ref. Nº</th>
+                <th>meter Id</th>
                 <th>Amount</th>
+                <th>Substitute</th>
                 <th>Date of Reading</th>
             </tr>
         </thead>
@@ -19,6 +20,7 @@
                 <td>{{dataItem.comment}}</td>
                 <td>{{dataItem.meterId}}</td>
                 <td>{{dataItem.meterCount}}</td>
+                <td>{{dataItem.substitute ? 'yes' : 'no'}}</td>
                 <td>{{dataItem.dateOfReading}}</td>
                 <td>
                     <div>

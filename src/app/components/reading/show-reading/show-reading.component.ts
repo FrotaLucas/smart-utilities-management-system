@@ -35,7 +35,7 @@ export class ShowReadingComponent implements OnInit {
 
   deleteReading(uuid: string){
       this._readingService.deleteReading(uuid).subscribe( result => {
-        console.log('reding deleted');
+        //console.log('reding deleted');
         this.refreshPage();
       }
         
