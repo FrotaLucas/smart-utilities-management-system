@@ -32,6 +32,7 @@ export class CustomerService {
         );
     }
 
+    //esta estranho retornar string. Backend retorna json !! REVISAR!!
     updateCustomer(customer: Customer): Observable<string> {
         return this.http.put<string>(`${this.myApp}${this.myApi}`, customer);
     }
