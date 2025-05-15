@@ -36,6 +36,7 @@ export class AddReadingComponent implements OnInit{
   ngOnInit(): void {
     this.form = this.fb
     .group({meterId: ['', Validators.required],
+      customerId: [''],
       kindOfMeter: ['', Validators.required],
       meterCount: ['', Validators.required],
       comment: ['', Validators.required],  //nao requerido!!

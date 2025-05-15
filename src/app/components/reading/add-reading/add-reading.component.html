@@ -1,5 +1,10 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="reading-form">
   
+   <mat-form-field>
+    <mat-label>Customer Id</mat-label>
+    <input matInput formControlName="customerId" />
+  </mat-form-field>
+
   <mat-form-field>
     <mat-label>Meter Id</mat-label>
     <input matInput formControlName="meterId" />
