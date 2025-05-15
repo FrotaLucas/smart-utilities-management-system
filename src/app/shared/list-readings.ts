@@ -9,7 +9,15 @@ const listOfreading: Reading[] = [
     meterId: "101",
     meterCount: 15230,
     substitute: true,
-    dateOfReading: "01-05-2025"
+    dateOfReading: "01-05-2025",
+      customer: {
+      id: 111,
+      uuid: '',
+      firstName: '',
+      lastName: '',
+      gender: 'M',
+      birthDate: '1900-01-01'
+    }
   },
   {
     uuid: 'uuid',
@@ -19,7 +27,15 @@ const listOfreading: Reading[] = [
     meterId: "202",
     meterCount: 847,
     substitute: true,
-    dateOfReading: "01-05-2025"
+    dateOfReading: "01-05-2025",
+      customer: {
+      id: 111,
+      uuid: '',
+      firstName: '',
+      lastName: '',
+      gender: 'M',
+      birthDate: '1900-01-01'
+    }
   },
   {
     uuid: 'uuid',
@@ -29,7 +45,15 @@ const listOfreading: Reading[] = [
     meterId: "101",
     meterCount: 15400,
     substitute: true,
-    dateOfReading: "01-06-2024"
+    dateOfReading: "01-06-2024",
+      customer: {
+      id: 111,
+      uuid: '',
+      firstName: '',
+      lastName: '',
+      gender: 'M',
+      birthDate: '1900-01-01'
+    }
   },
   {
     uuid: 'uuid',
@@ -39,7 +63,15 @@ const listOfreading: Reading[] = [
     meterId: "202",
     meterCount: 900,
     substitute: true,
-    dateOfReading: "01-06-2024"
+    dateOfReading: "01-06-2024",
+      customer: {
+      id: 111,
+      uuid: '',
+      firstName: '',
+      lastName: '',
+      gender: 'M',
+      birthDate: '1900-01-01'
+    }
   },
   {
     uuid: 'uuid',
@@ -49,7 +81,15 @@ const listOfreading: Reading[] = [
     meterId: "103",
     meterCount: 500,
     substitute: true,
-    dateOfReading: "10-05-2025"
+    dateOfReading: "10-05-2025",
+      customer: {
+      id: 111,
+      uuid: '',
+      firstName: '',
+      lastName: '',
+      gender: 'M',
+      birthDate: '1900-01-01'
+    }
   }
 ];
 

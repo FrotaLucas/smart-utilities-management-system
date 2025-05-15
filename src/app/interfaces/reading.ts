@@ -1,3 +1,5 @@
+import { Customer } from "./customer";
+
 export interface Reading {
     uuid: string
     customerId: number;
@@ -7,4 +9,5 @@ export interface Reading {
     meterCount: number;
     substitute: boolean;
     dateOfReading: string;
+    customer: Customer;
 }
