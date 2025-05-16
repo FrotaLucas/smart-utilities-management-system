@@ -8,12 +8,12 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { MatIconModule } from '@angular/material/icon';
-import { T } from '@angular/cdk/keycodes';
 import { EditReadingComponent } from '../edit-reading/edit-reading.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-show-reading',
-  imports: [CommonModule, RouterModule, MatIconModule],
+  imports: [CommonModule, RouterModule, MatIconModule, FormsModule],
   templateUrl: './show-reading.component.html',
   styleUrl: './show-reading.component.css'
 })
@@ -21,6 +21,9 @@ import { EditReadingComponent } from '../edit-reading/edit-reading.component';
 export class ShowReadingComponent implements OnInit {
 
   listOfReading!: Reading[]
+  uuid: string = '';
+  isFindMode: boolean = false;
+  foundReading!: Reading;
 
   constructor(private router: Router, private _readingService: ReadingService, private dialog: MatDialog) {
     //nao poderia inicializar listOfReading aqui dentro
@@ -46,8 +49,41 @@ export class ShowReadingComponent implements OnInit {
     )
   }
 
+  toggleFind(): void {
+    this.isFindMode = !this.isFindMode;
+
+    if (this.uuid.trim()) {
+      this._readingService.getReading(this.uuid).subscribe(response => {
+        console.log('hi', response)
+        this.foundReading = response;
+      })
+    }
+    else {
+      console.log('hi');
+    }
+
+  }
+
+  exportData(): void{
+    if (!this.listOfReading || this.listOfReading.length === 0) {
+    console.warn('Nenhum dado disponível para exportar.');
+    return;
+  }
+
+  const json = JSON.stringify(this.listOfReading, null, 2); // indentado
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'readings.json';
+  a.click();
+
+  URL.revokeObjectURL(url); //
+  }
+
   editReading(reading: Reading) {
-    const dialogRef = this.dialog.open( EditReadingComponent, {
+    const dialogRef = this.dialog.open(EditReadingComponent, {
       width: '600px',
       data: reading
     })
