@@ -1,0 +1,18 @@
+
+<div class="analytics-container">
+  <h2>Analytics</h2>
+
+  <div class="bar-chart">
+    <div class="bar-group">
+      <div class="bar-value">{{ totalC }}</div>
+      <div class="bar" [style.height.%]="totalC"></div>
+      <div class="bar-label">Customers</div>
+    </div>
+
+    <div class="bar-group">
+      <div class="bar-value">{{ totalR }}</div>
+      <div class="bar" [style.height.%]="totalR"></div>
+      <div class="bar-label">Readings</div>
+    </div>
+  </div>
+</div>

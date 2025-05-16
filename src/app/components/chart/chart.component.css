@@ -1,0 +1,47 @@
+.analytics-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 250px;
+  border-left: 2px solid #333;
+  border-bottom: 2px solid #333;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 80px;
+  position: relative;
+}
+
+.bar {
+  width: 60px;
+  background-color: #007bff;
+  transition: height 0.3s ease-in-out;
+}
+
+.bar-value {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.bar-label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
