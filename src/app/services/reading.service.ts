@@ -24,7 +24,7 @@ export class ReadingService {
     getReadings(): Observable<Reading[]> {
 
         return this.http.get<any>(`${this.myApp}${this.myApi}`).pipe(
-            map( response => response.properties.readings.items.properties)
+            map(response => response.properties.readings.items.properties)
         )
     }
 
@@ -33,12 +33,19 @@ export class ReadingService {
     }
 
     updateReading(reading: Reading): Observable<void> {
-         return this.http.put<void>(`${this.myApp}${this.myApi}`, reading);
+        return this.http.put<void>(`${this.myApp}${this.myApi}`, reading);
     }
 
     addReading(reading: Reading): Observable<Reading> {
         return this.http.post<any>(`${this.myApp}${this.myApi}`, reading).pipe(
-            map( response => response.properties.reading.properties)
+            map(response => response.properties.reading.properties)
+        )
+    }
+
+    getReading(uuid: string): Observable<Reading> {
+
+        return this.http.get<any>(`${this.myApp}${this.myApi}/${uuid}`).pipe(
+            map(response => response.properties.reading.properties)
         )
     }
 }
