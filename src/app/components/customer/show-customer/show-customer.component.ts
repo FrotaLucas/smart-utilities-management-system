@@ -15,16 +15,22 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-show-customer',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatIconModule],
+  imports: [CommonModule, RouterModule, MatIconModule, FormsModule],
   templateUrl: './show-customer.component.html',
   styleUrl: './show-customer.component.css'
 })
-export class ShowCustomerComponent implements OnInit{
+export class ShowCustomerComponent implements OnInit {
 
   listOfCustomers!: Customer[];
+
+  isFindMode: boolean = false;
+  foundCustomer!: Customer;
+  uuid: string = '';
 
   //myList: Customer[] = list;
   //nameTest: string = "mensage";
@@ -38,6 +44,7 @@ export class ShowCustomerComponent implements OnInit{
   refreshPage() {
     this._customerService.getCustomers().subscribe(data => {
       this.listOfCustomers = data;
+      console.log(data);
       //console.log('list', this.listOfCustomers)
     }
     );
@@ -54,13 +61,44 @@ export class ShowCustomerComponent implements OnInit{
 
   deleteCustomer(uuid: string): void {
 
-    this._customerService.deleteCustomer(uuid).subscribe(customer =>{
+    this._customerService.deleteCustomer(uuid).subscribe(customer => {
       console.log('deleted customer', customer)
       this.refreshPage()
     }
     );
   }
 
+  toggleFind(): void {
+    this.isFindMode = !this.isFindMode;
+
+    if (this.uuid.trim()) {
+      this._customerService.getCustomer(this.uuid).subscribe(response => {
+        this.foundCustomer = response;
+        console.log(this.foundCustomer);
+      });
+    } else {
+      console.warn('UUID está vazio!');
+    }
+  }
+
+  exportData(): void {
+    if (!this.listOfCustomers || this.listOfCustomers.length === 0) {
+      console.warn('Nenhum dado disponível para exportar.');
+      return;
+    }
+
+    const json = JSON.stringify(this.listOfCustomers, null, 2); // indentado
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'customers.json';
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+  }
 
   // editCustomer(id?: number): void {
   //   const customer = this.myList.find(item => item.id === id);
@@ -90,7 +128,7 @@ export class ShowCustomerComponent implements OnInit{
       width: '600px',
       data: customer
     });
-    
+
     //angula atualiza sem precisar chamar esse metodo
     //this.refreshPage();
   }
