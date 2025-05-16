@@ -30,3 +30,12 @@ margin: auto;
 .icon:hover {
   opacity: 0.2;
 }
+
+.all-buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.find-customer {
+  min-width: 500px;
+}
