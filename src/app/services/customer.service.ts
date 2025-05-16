@@ -26,6 +26,7 @@ export class CustomerService {
             map(response => response.properties.customers.items.properties)
         );
     }
+
     deleteCustomer(uuid: string): Observable<Customer> {
         return this.http.delete<any>(`${this.myApp}${this.myApi}/${uuid}`).pipe(
             map(response => response.properties.customer.properties)
@@ -43,4 +44,9 @@ export class CustomerService {
         )
     }
 
+     getCustomer(uuid: string): Observable<Customer> {
+        return this.http.get<any>(`${this.myApp}${this.myApi}/${uuid}`).pipe(
+            map(response => response.properties.customer.properties)
+        );
+    }
 }
