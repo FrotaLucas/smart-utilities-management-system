@@ -1,9 +1,38 @@
 <div class="show-container">
 
-    <button type="button" (click)="navigateTo()" class="btn btn-primary float-right m-2"> Add Customer</button>
+    <div class="all-buttons">
+        <input type="text" class="find-customer m-2" [(ngModel)]="uuid">
+        <button (click)="toggleFind()" class="btn btn-secondary m-2">Find</button>
+
+        <button (click)="exportData()" class="btn btn-secondary m-2">Export Customers </button>
 
 
-    <table class="table table-striped">
+        <button type="button" (click)="navigateTo()" class="btn btn-primary float-right m-2"> Add Customer</button>
+    </div>
+
+
+
+    <table class="table table-striped" *ngIf="isFindMode">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Family Name</th>
+                <th>Gender</th>
+                <th>Birthdate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{foundCustomer.firstName}}</td>
+                <td>{{foundCustomer.lastName}}</td>
+                <td>{{foundCustomer.gender}}</td>
+                <td>{{foundCustomer.birthDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table class="table table-striped" *ngIf="!isFindMode">
         <thead>
             <tr>
                 <th>Name</th>
@@ -21,10 +50,12 @@
                 <td>{{dataItem.birthDate}}</td>
                 <td>
                     <div>
-                        <button mat-icon-button (click)="editCustomer(dataItem)" class="icon edit-icon"  matTooltip="Edit">
+                        <button mat-icon-button (click)="editCustomer(dataItem)" class="icon edit-icon"
+                            matTooltip="Edit">
                             <mat-icon>edit</mat-icon>
                         </button>
-                         <button mat-icon-button (click)="deleteCustomer(dataItem.uuid)" class="icon delete-icon" matTooltip="Delete">
+                        <button mat-icon-button (click)="deleteCustomer(dataItem.uuid)" class="icon delete-icon"
+                            matTooltip="Delete">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </div>
