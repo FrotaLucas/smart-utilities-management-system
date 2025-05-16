@@ -1,36 +1,40 @@
-<h2>Edit Customer</h2>
+<div class="box">
+  
+  <h2>Edit Customer</h2>
+  
+  <form [formGroup]="form" (ngSubmit)="saveChanges()" class="customer-form">
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="firstName" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Family Name</mat-label>
+      <input matInput formControlName="lastName" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option value="M">M</mat-option>
+        <mat-option value="W">W</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Birthdate</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+  
+    <div class="buttons">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Save</button>
+      <button mat-button type="button" (click)="cancel()">Cancel</button>
+    </div>
+  
+  </form>
 
-<form [formGroup]="form" (ngSubmit)="saveChanges()" class="customer-form">
-
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Name</mat-label>
-    <input matInput formControlName="firstName" />
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Family Name</mat-label>
-    <input matInput formControlName="lastName" />
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Gender</mat-label>
-    <mat-select formControlName="gender">
-      <mat-option value="M">M</mat-option>
-      <mat-option value="W">W</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Birthdate</mat-label>
-    <input matInput [matDatepicker]="picker" formControlName="birthDate" />
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-
-
-  <div class="buttons">
-    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Save</button>
-    <button mat-button type="button" (click)="cancel()">Cancel</button>
-  </div>
-
-</form>
+</div>
