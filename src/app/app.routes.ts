@@ -7,6 +7,7 @@ import { ShowCustomerComponent } from './components/customer/show-customer/show-
 
 import { ReadingComponent } from './components/reading/reading.component';
 import { AddReadingComponent } from './components/reading/add-reading/add-reading.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 
 //I am using standalone arquitecture
@@ -31,6 +32,9 @@ export const routes: Routes = [
     },
     {
       path: 'reading/add', component: AddReadingComponent
+    },
+    {
+      path: 'analytics', component: ChartComponent
     }
     // { path: '', redirectTo: 'customer', pathMatch: 'full' },
     // { path: '**', redirectTo: 'customer' }
