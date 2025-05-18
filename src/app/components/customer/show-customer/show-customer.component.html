@@ -1,66 +1,62 @@
 <div class="show-container">
 
+    <!-- <div class="container-filter"> -->
     <div class="all-buttons">
-        <input type="text" class="find-customer m-2" [(ngModel)]="uuid">
-        <button (click)="toggleFind()" class="btn btn-secondary m-2">Find</button>
+        <!-- corrigir appearence-->
+        <mat-form-field class="input" appearance="outline">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex Name" autocomplete="on">
+        </mat-form-field>
 
-        <button (click)="exportData()" class="btn btn-secondary m-2">Export Customers </button>
+         <button (click)="exportData()" class="btn btn-secondary">Export Customers </button>
 
 
-        <button type="button" (click)="navigateTo()" class="btn btn-primary float-right m-2"> Add Customer</button>
+        <button type="button" (click)="navigateTo()" class="btn btn-primary"> Add Customer</button>
+
     </div>
 
+    <table matSort mat-table [dataSource]="dataSource" class="table table-striped">
+
+        <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
 
 
-    <table class="table table-striped" *ngIf="isFindMode">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Family Name</th>
-                <th>Gender</th>
-                <th>Birthdate</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{foundCustomer.firstName}}</td>
-                <td>{{foundCustomer.lastName}}</td>
-                <td>{{foundCustomer.gender}}</td>
-                <td>{{foundCustomer.birthDate}}</td>
-            </tr>
-        </tbody>
+        <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Family Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="birthDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Birthdate</th>
+            <td mat-cell *matCellDef="let element"> {{element.birthDate }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let element">
+                <mat-icon mat-icon-button (click)="editCustomer(element)" class="icon edit-icon" matTooltip="Edit">
+                    <mat-icon>edit</mat-icon>
+                </mat-icon>
+                <mat-icon mat-icon-button (click)="deleteCustomer(element.uuid)" class="icon delete-icon" matTooltip="Delete">
+                    <mat-icon>delete</mat-icon>
+                </mat-icon>
+            </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 
-
-    <table class="table table-striped" *ngIf="!isFindMode">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Family Name</th>
-                <th>Gender</th>
-                <th>Birthdate</th>
-                <th>Edit</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let dataItem of listOfCustomers">
-                <td>{{dataItem.firstName}}</td>
-                <td>{{dataItem.lastName}}</td>
-                <td>{{dataItem.gender}}</td>
-                <td>{{dataItem.birthDate}}</td>
-                <td>
-                    <div>
-                        <button mat-icon-button (click)="editCustomer(dataItem)" class="icon edit-icon"
-                            matTooltip="Edit">
-                            <mat-icon>edit</mat-icon>
-                        </button>
-                        <button mat-icon-button (click)="deleteCustomer(dataItem.uuid)" class="icon delete-icon"
-                            matTooltip="Delete">
-                            <mat-icon>delete</mat-icon>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
+
+
+<mat-paginator class="custom-paginator" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" [length]="10" [pageSize]="10">
+</mat-paginator>
