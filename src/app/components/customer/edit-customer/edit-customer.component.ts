@@ -12,6 +12,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-edit-customer',
@@ -34,7 +35,7 @@ export class EditCustomerComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private _customerService: CustomerService,
     private dialogRef: MatDialogRef<EditCustomerComponent>,
-    @Inject(MAT_DIALOG_DATA) private customer: Customer,) { }
+    @Inject(MAT_DIALOG_DATA) private customer: Customer, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     //console.log('customer', this.customer);
@@ -64,6 +65,7 @@ export class EditCustomerComponent implements OnInit {
       //console.log('updated customer', this.customer);
 
       this._customerService.updateCustomer(this.customer).subscribe();
+      this.snackBar.open("reading successfully updated", "", {duration: 2000});
       this.dialogRef.close(this.form.value);
     }
   }
