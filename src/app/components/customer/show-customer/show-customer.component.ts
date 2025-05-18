@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Customer } from '../../../interfaces/customer';
 import { list } from '../../../shared/list-customers';
 import { CustomerService } from '../../../services/customer.service';
@@ -15,36 +15,63 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
 
+import { MatLabel } from '@angular/material/form-field';
+import { MatFormField } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatCellDef, MatHeaderCellDef } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+
 import { FormsModule } from '@angular/forms';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-show-customer',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatIconModule, FormsModule],
+  imports: [CommonModule, RouterModule, MatIconModule, FormsModule,
+    MatLabel, MatFormField, MatInput, MatCellDef, MatHeaderCellDef,
+    MatPaginator, MatTableModule, MatSortModule, MatTooltip],
   templateUrl: './show-customer.component.html',
   styleUrl: './show-customer.component.css'
 })
-export class ShowCustomerComponent implements OnInit {
+export class ShowCustomerComponent implements OnInit, AfterViewInit {
 
   listOfCustomers!: Customer[];
+  displayedColumns: string[] = ['firstName', 'lastName', 'gender', 'birthDate', 'edit'];
 
-  isFindMode: boolean = false;
-  foundCustomer!: Customer;
-  uuid: string = '';
+  dataSource!: MatTableDataSource<Customer>
+  //class MatSort is the reference to the instance/attribut matSort inside the <table>
+  @ViewChild(MatSort) myCustomSort!: MatSort;
+  //Class MatPaginator is the reference to the element <mat-paginator> inside the <table>
+  @ViewChild(MatPaginator) myCustomPaginator!: MatPaginator;
 
   //myList: Customer[] = list;
   //nameTest: string = "mensage";
 
-  constructor(private router: Router, private dialog: MatDialog, private _customerService: CustomerService) { }
+  constructor(private router: Router, private dialog: MatDialog, private _customerService: CustomerService, private snackBar: MatSnackBar) {
+    this.dataSource = new MatTableDataSource();
+  }
 
   ngOnInit(): void {  //deveria importar o metodo ngOnit !!
     this.refreshPage();
   }
 
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.myCustomPaginator;
+    this.dataSource.sort = this.myCustomSort;
+  }
+
   refreshPage() {
     this._customerService.getCustomers().subscribe(data => {
       this.listOfCustomers = data;
-      console.log(data);
+      this.dataSource.data = data;
+
+      //references
+      this.dataSource.paginator = this.myCustomPaginator;
+      this.dataSource.sort = this.myCustomSort;
+      console.log('dataSource', this.dataSource.data);
       //console.log('list', this.listOfCustomers)
     }
     );
@@ -66,24 +93,21 @@ export class ShowCustomerComponent implements OnInit {
       this.refreshPage()
     }
     );
+
+   this.snackBar.open( 'successfully deleted','', {duration: 2000});
   }
 
-  toggleFind(): void {
-    this.isFindMode = !this.isFindMode;
+  applyFilter(event: Event) {
+    if (this.dataSource.data) {
+      const filteredData = (event.target as HTMLInputElement).value;
+      this.dataSource.filter = filteredData.trim().toLowerCase();
 
-    if (this.uuid.trim()) {
-      this._customerService.getCustomer(this.uuid).subscribe(response => {
-        this.foundCustomer = response;
-        console.log(this.foundCustomer);
-      });
-    } else {
-      console.warn('UUID está vazio!');
     }
   }
 
   exportData(): void {
     if (!this.listOfCustomers || this.listOfCustomers.length === 0) {
-      console.warn('Nenhum dado disponível para exportar.');
+      console.warn('Nothing to export.');
       return;
     }
 
