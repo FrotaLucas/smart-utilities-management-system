@@ -39,6 +39,8 @@ export class ShowCustomerComponent implements OnInit, AfterViewInit {
   dataSource!: MatTableDataSource<Customer>
   //class MatSort is the reference to the instance/attribut matSort inside the <table>
   @ViewChild(MatSort) refMatSort!: MatSort;
+  //MatSort is reference and MatSortModule is the html component ** setinhas de ordenacao
+
   //Class MatPaginator is the reference to the element <mat-paginator> inside the <table>
   @ViewChild(MatPaginator) refMatPaginator!: MatPaginator;
 
