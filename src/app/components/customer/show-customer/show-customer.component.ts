@@ -9,21 +9,15 @@ import { Router, RouterModule } from '@angular/router';
 
 import { EditCustomerComponent } from '../edit-customer/edit-customer.component';
 
-import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
 
-import { MatLabel } from '@angular/material/form-field';
-import { MatFormField } from '@angular/material/form-field';
+import { MatDialog } from '@angular/material/dialog';
+import { MatLabel, MatFormField } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { MatCellDef, MatHeaderCellDef } from '@angular/material/table';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-
-import { FormsModule } from '@angular/forms';
+import { MatTableModule, MatCellDef, MatHeaderCellDef, MatTableDataSource } from '@angular/material/table';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTooltip } from '@angular/material/tooltip';
@@ -31,9 +25,9 @@ import { MatTooltip } from '@angular/material/tooltip';
 @Component({
   selector: 'app-show-customer',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatIconModule, FormsModule,
-    MatLabel, MatFormField, MatInput, MatCellDef, MatHeaderCellDef,
-    MatPaginator, MatTableModule, MatSortModule, MatTooltip],
+  imports: [CommonModule, RouterModule, MatIconModule,
+    MatLabel, MatFormField, MatInput, MatTableModule, MatCellDef, MatHeaderCellDef,
+    MatPaginator, MatSortModule, MatTooltip],
   templateUrl: './show-customer.component.html',
   styleUrl: './show-customer.component.css'
 })
@@ -44,9 +38,9 @@ export class ShowCustomerComponent implements OnInit, AfterViewInit {
 
   dataSource!: MatTableDataSource<Customer>
   //class MatSort is the reference to the instance/attribut matSort inside the <table>
-  @ViewChild(MatSort) myCustomSort!: MatSort;
+  @ViewChild(MatSort) refMatSort!: MatSort;
   //Class MatPaginator is the reference to the element <mat-paginator> inside the <table>
-  @ViewChild(MatPaginator) myCustomPaginator!: MatPaginator;
+  @ViewChild(MatPaginator) refMatPaginator!: MatPaginator;
 
   //myList: Customer[] = list;
   //nameTest: string = "mensage";
@@ -60,8 +54,8 @@ export class ShowCustomerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.dataSource.paginator = this.myCustomPaginator;
-    this.dataSource.sort = this.myCustomSort;
+    this.dataSource.paginator = this.refMatPaginator;
+    this.dataSource.sort = this.refMatSort;
   }
 
   refreshPage() {
@@ -70,8 +64,8 @@ export class ShowCustomerComponent implements OnInit, AfterViewInit {
       this.dataSource.data = data;
 
       //references
-      this.dataSource.paginator = this.myCustomPaginator;
-      this.dataSource.sort = this.myCustomSort;
+      this.dataSource.paginator = this.refMatPaginator;
+      this.dataSource.sort = this.refMatSort;
       console.log('dataSource', this.dataSource.data);
       //console.log('list', this.listOfCustomers)
     }
@@ -99,11 +93,8 @@ export class ShowCustomerComponent implements OnInit, AfterViewInit {
   }
 
   applyFilter(event: Event) {
-    if (this.dataSource.data) {
       const filteredData = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filteredData.trim().toLowerCase();
-
-    }
   }
 
   exportData(): void {
