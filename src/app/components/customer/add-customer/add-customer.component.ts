@@ -15,6 +15,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-customer',
@@ -45,7 +46,7 @@ export class AddCustomerComponent implements OnInit {
   constructor(private fb: FormBuilder, private _customerService: CustomerService,
     private _readingService: ReadingService,
     @Optional() @Inject(MAT_DIALOG_DATA) private data: { reading: Reading | null, isNewCustomer: boolean } | null,
-    @Optional() private dialogRef: MatDialogRef<AddCustomerComponent>) {
+    @Optional() private dialogRef: MatDialogRef<AddCustomerComponent>, private snackBar: MatSnackBar) {
     //this.reading = this.data.reading || null;
     this.reading = this.data?.reading ?? null
     this.isNewCustomer = this.data?.isNewCustomer ?? true;
@@ -80,16 +81,26 @@ export class AddCustomerComponent implements OnInit {
         this.data.reading.customer.gender = customer.gender;
         this.data.reading.customer.birthDate = customer.birthDate;
 
-        this._readingService.addReading(this.data.reading).subscribe( () => {
-          this.dialogRef.close()
-        });
+        this._readingService.addReading(this.data.reading).subscribe(
+          {
+            next: () => this.dialogRef.close(true),
+            error: () => this.dialogRef.close(false)
+          }
+        );
+
       }
 
       else {
-        this._customerService.addCustomer(customer).subscribe(customer =>
-          console.log('new customer added', customer)
-        );
+        this._customerService.addCustomer(customer).subscribe();
+
+        this.form.reset();
+        this.snackBar.open("customer added successfully", "", {duration: 2000})
       }
+      
+      
+
+
+
     }
   }
 
