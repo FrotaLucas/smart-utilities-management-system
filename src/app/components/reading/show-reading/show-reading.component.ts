@@ -6,7 +6,6 @@ import { Router, RouterModule } from '@angular/router';
 import { ReadingService } from '../../../services/reading.service';
 import { HttpClient } from '@angular/common/http';
 
-import { MatDialog } from '@angular/material/dialog';
 
 import { EditReadingComponent } from '../edit-reading/edit-reading.component';
 
@@ -15,11 +14,12 @@ import { MatInput } from '@angular/material/input';
 import { MatIcon } from '@angular/material/icon';
 import { MatTableModule, MatCellDef, MatHeaderCellDef, MatColumnDef, MatTableDataSource } from '@angular/material/table';
 
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatTooltip } from '@angular/material/tooltip';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
-import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-show-reading',
@@ -60,7 +60,6 @@ export class ShowReadingComponent implements OnInit, AfterViewInit {
       this.dataSource.data = data;
       this.dataSource.paginator = this.refPaginator;
       this.dataSource.sort = this.refMatSort;
-      console.log(data);
     }
 
     );
