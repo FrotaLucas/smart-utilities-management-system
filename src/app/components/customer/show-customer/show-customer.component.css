@@ -1,12 +1,29 @@
 .show-container {
-  width: 80%; /* ou defina uma largura fixa como 600px /
-margin-left: auto;
-margin-right: auto;
-background-color: black;
-padding: 20px;
-color: white; / Para melhorar contraste com fundo preto */
-margin: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
+
+table {
+  background-color: white !important;
+  border-width: 10px black;
+}
+
+.mat-mdc-table .mdc-data-table__row {
+  transition: background-color 0.2s ease;
+}
+
+.mat-mdc-table .mdc-data-table__row:hover {
+  background-color: #e3f2fd !important; 
+  cursor: pointer;
+}
+
+.custom-paginator {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: white !important;
+}
+
+
 
 .icon {
   cursor: pointer;
@@ -15,27 +32,42 @@ margin: auto;
 }
 
 .edit-icon {
-  color: #1976d2; /* Azul Material Design (opcional) */
+  color: #1976d2;
   border: unset;
   background-color: unset;
 }
 
 .delete-icon {
-  color: #e53935; /* Vermelho Material Design */
+  color: #e53935;
   border: unset;
   background-color: unset;
 
 }
 
-.icon:hover {
-  opacity: 0.2;
+
+.all-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-.all-buttons{
-  display: flex;
-  justify-content: space-around;
+.all-buttons > button {
+  height: 40px;
 }
+
 
 .find-customer {
   min-width: 500px;
+  margin-top: 1rem;
+}
+
+
+.input {
+  margin-top: 1rem;
+  width: 50%;
+  font-size: 14px;
+  margin-right: 10px;
+
 }
