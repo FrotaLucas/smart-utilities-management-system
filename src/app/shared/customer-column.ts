@@ -2,7 +2,8 @@ const customerColumns: string[] = [
     'firstName',
     'lastName',
     'gender',
-    'birthDate'
+    'birthDate',
+    'edit',
 ];
 
 
