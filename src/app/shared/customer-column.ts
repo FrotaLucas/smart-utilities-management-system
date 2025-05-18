@@ -1,6 +1,9 @@
-const customerColuns: string[] = [
-    'Name',
-    'Family Name',
-    'Gender',
-    'Birthdate'
-]
+const customerColumns: string[] = [
+    'firstName',
+    'lastName',
+    'gender',
+    'birthDate'
+];
+
+
+export {customerColumns};
