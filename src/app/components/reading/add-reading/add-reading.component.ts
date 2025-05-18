@@ -11,7 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddCustomerComponent } from '../../customer/add-customer/add-customer.component';
 
 @Component({
@@ -34,7 +35,7 @@ export class AddReadingComponent implements OnInit {
   mylist: Reading[] = listOfreading;
 
   constructor(private fb: FormBuilder, private _readingService: ReadingService, 
-    private dialog: MatDialog) { }
+    private dialog: MatDialog, private snackBar: MatSnackBar ) { }
 
   ngOnInit(): void {
     this.form = this.fb
@@ -81,14 +82,20 @@ export class AddReadingComponent implements OnInit {
           }
         });
 
-        dialogRef.afterClosed().subscribe(()=> {
-          this.form.reset()
+        dialogRef.afterClosed().subscribe((result)=> {
+          if(result == true) {
+            this.form.reset();
+            this.snackBar.open("customer created and reading saved successfully");
+          }
+        
+
         })
       }
 
       else{
         this._readingService.addReading(reading).subscribe();
-        console.log('new reading addes', reading);
+        this.form.reset();
+        this.snackBar.open("data added successfully", "", {duration: 2000})
       }
 
     }
