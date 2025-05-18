@@ -39,8 +39,6 @@ export class ShowReadingComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = readingColumns;
 
-  // @ViewChild(MatPaginator) refPaginator: MatPaginator;
-
   constructor(private router: Router, private _readingService: ReadingService, private dialog: MatDialog, private snachBar: MatSnackBar) {
     //nao poderia inicializar listOfReading aqui dentro
 
@@ -73,8 +71,6 @@ export class ShowReadingComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = input.trim().toLowerCase();
 
   }
-
-
 
   deleteReading(uuid: string) {
     this._readingService.deleteReading(uuid).subscribe(result => {
