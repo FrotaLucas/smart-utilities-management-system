@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Customer } from '../../../interfaces/customer';
 import { list } from '../../../shared/list-customers';
+import { customerColumns } from '../../../shared/customer-column';
 import { CustomerService } from '../../../services/customer.service';
 
 import { CommonModule } from '@angular/common';
@@ -39,7 +40,7 @@ import { MatTooltip } from '@angular/material/tooltip';
 export class ShowCustomerComponent implements OnInit, AfterViewInit {
 
   listOfCustomers!: Customer[];
-  displayedColumns: string[] = ['firstName', 'lastName', 'gender', 'birthDate', 'edit'];
+  displayedColumns: string[] = customerColumns;
 
   dataSource!: MatTableDataSource<Customer>
   //class MatSort is the reference to the instance/attribut matSort inside the <table>
