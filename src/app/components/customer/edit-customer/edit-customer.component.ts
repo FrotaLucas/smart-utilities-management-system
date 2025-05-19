@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Customer } from '../../../interfaces/customer';
 import { CustomerService } from '../../../services/customer.service';
+import { DatePipe } from '@angular/common';
 
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -24,7 +25,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatNativeDateModule,
     MatButtonModule,
     MatSelectModule],
-  providers: [MatNativeDateModule],
+  providers: [MatNativeDateModule, DatePipe],
   templateUrl: './edit-customer.component.html',
   styleUrl: './edit-customer.component.css'
 })
@@ -36,7 +37,8 @@ export class EditCustomerComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private _customerService: CustomerService,
     private dialogRef: MatDialogRef<EditCustomerComponent>,
-    @Inject(MAT_DIALOG_DATA) private customer: Customer, private snackBar: MatSnackBar) { }
+    @Inject(MAT_DIALOG_DATA) private customer: Customer,
+    private snackBar: MatSnackBar, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     //console.log('customer', this.customer);
@@ -49,23 +51,11 @@ export class EditCustomerComponent implements OnInit {
       })
   }
 
-  // formatDate(date: Date): string {
-  //   const day = String(date.getDate()).padStart(2, '0');
-  //   const month = String(date.getMonth() + 1).padStart(2, '0'); // mês começa em 0
-  //   const year = date.getFullYear();
-  //   return `${year}-${month}-${day}`;
-  // }
-
   saveChanges(): void {
     if (this.form.valid) {
 
-      //this.customer.birthDate = this.formatDate(new Date(this.form.value.birthDate));
-      //this.customer.birthDate = this.form.value.birthDate;
-
-      const birthDate: Date = this.form.value.birthDate;
-      // Convert to backend format yyyy-MM-dd
-      const formattedBirthDate = birthDate.toISOString().split('T')[0];
-
+      const formattedDate = this.datePipe.transform(this.form.value.birthDate, 'yyyy-MM-dd');
+      this.customer.birthDate = formattedDate as any;
       this.customer.firstName = this.form.value.firstName;
       this.customer.lastName = this.form.value.lastName;
       this.customer.gender = this.form.value.gender;
