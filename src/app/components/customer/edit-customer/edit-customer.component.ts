@@ -24,6 +24,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatNativeDateModule,
     MatButtonModule,
     MatSelectModule],
+  providers: [MatNativeDateModule],
   templateUrl: './edit-customer.component.html',
   styleUrl: './edit-customer.component.css'
 })
@@ -44,28 +45,34 @@ export class EditCustomerComponent implements OnInit {
         firstName: [this.customer.firstName, Validators.required],
         lastName: [this.customer.lastName, Validators.required],
         gender: [this.customer.gender, Validators.required],
-        birthDate: [this.customer.birthDate, Validators.required],
+        birthDate: [new Date(this.customer.birthDate), Validators.required],
       })
   }
 
-  formatDate(date: Date): string {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // mês começa em 0
-    const year = date.getFullYear();
-    return `${year}-${month}-${day}`;
-  }
+  // formatDate(date: Date): string {
+  //   const day = String(date.getDate()).padStart(2, '0');
+  //   const month = String(date.getMonth() + 1).padStart(2, '0'); // mês começa em 0
+  //   const year = date.getFullYear();
+  //   return `${year}-${month}-${day}`;
+  // }
 
   saveChanges(): void {
     if (this.form.valid) {
-      
-      this.customer.birthDate = this.formatDate(new Date(this.form.value.birthDate));
+
+      //this.customer.birthDate = this.formatDate(new Date(this.form.value.birthDate));
+      //this.customer.birthDate = this.form.value.birthDate;
+
+      const birthDate: Date = this.form.value.birthDate;
+      // Convert to backend format yyyy-MM-dd
+      const formattedBirthDate = birthDate.toISOString().split('T')[0];
+
       this.customer.firstName = this.form.value.firstName;
       this.customer.lastName = this.form.value.lastName;
       this.customer.gender = this.form.value.gender;
-      //console.log('updated customer', this.customer);
+      console.log('updated customer', this.customer);
 
       this._customerService.updateCustomer(this.customer).subscribe();
-      this.snackBar.open("reading successfully updated", "", {duration: 2000});
+      this.snackBar.open("reading successfully updated", "", { duration: 2000 });
       this.dialogRef.close(this.form.value);
     }
   }
