@@ -8,7 +8,7 @@ const list: Customer[] = [
         firstName: 'Mary',
         lastName: 'Surname',
         gender: "female",
-        birthDate: "01-02-1995"
+        birthDate: new Date()
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const list: Customer[] = [
         firstName: 'Jhon',
         lastName: 'Surname',
         gender: "male",
-        birthDate: "01-02-1995"
+        birthDate: new Date()
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const list: Customer[] = [
         firstName: 'Helena',
         lastName: 'Surname',
         gender: "female",
-        birthDate: "01-02-1995"
+        birthDate: new Date()
     },
     {
         id: 4,
@@ -32,7 +32,7 @@ const list: Customer[] = [
         firstName: 'Name',
         lastName: 'Surname',
         gender: "male",
-        birthDate: "01-02-1995"
+        birthDate: new Date()
     },
     {
         id: 5,
@@ -40,7 +40,7 @@ const list: Customer[] = [
         firstName: 'Richard',
         lastName: 'Surname',
         gender: "female",
-        birthDate: "01-02-1995"
+        birthDate: new Date()
     }
 ];
 
