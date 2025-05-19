@@ -72,7 +72,6 @@ export class AddReadingComponent implements OnInit {
       reading.dateOfReading = this.formatDate(new Date(reading.dateOfReading));
 
       if( !this.form.value.customerId){
-        console.log('no user');
 
         const dialogRef = this.dialog.open(AddCustomerComponent, {
           width: '800px',
@@ -85,7 +84,7 @@ export class AddReadingComponent implements OnInit {
         dialogRef.afterClosed().subscribe((result)=> {
           if(result == true) {
             this.form.reset();
-            this.snackBar.open("customer created and reading saved successfully");
+            this.snackBar.open("customer created and reading saved successfully", " ", {duration: 2000});
           }
         
 
