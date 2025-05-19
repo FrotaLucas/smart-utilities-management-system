@@ -16,7 +16,7 @@ const listOfreading: Reading[] = [
       firstName: '',
       lastName: '',
       gender: 'M',
-      birthDate: '1900-01-01'
+      birthDate: new Date()
     }
   },
   {
@@ -34,7 +34,7 @@ const listOfreading: Reading[] = [
       firstName: '',
       lastName: '',
       gender: 'M',
-      birthDate: '1900-01-01'
+      birthDate: new Date()
     }
   },
   {
@@ -52,7 +52,7 @@ const listOfreading: Reading[] = [
       firstName: '',
       lastName: '',
       gender: 'M',
-      birthDate: '1900-01-01'
+      birthDate: new Date()
     }
   },
   {
@@ -70,7 +70,7 @@ const listOfreading: Reading[] = [
       firstName: '',
       lastName: '',
       gender: 'M',
-      birthDate: '1900-01-01'
+      birthDate: new Date()
     }
   },
   {
@@ -88,7 +88,7 @@ const listOfreading: Reading[] = [
       firstName: '',
       lastName: '',
       gender: 'M',
-      birthDate: '1900-01-01'
+      birthDate: new Date()
     }
   }
 ];
