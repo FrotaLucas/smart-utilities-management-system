@@ -3,7 +3,8 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { appRouterProviders } from './app/app.routes';
 import { provideHttpClient } from '@angular/common/http';
-
+import { MatNativeDateModule } from '@angular/material/core'; //datePicker disponivel globalmente. Corrige Bug no datepicker do editCustomer
+import { importProvidersFrom } from '@angular/core';
 
 //standalone application
 // bootstrapApplication(AppComponent, appConfig)
@@ -13,6 +14,7 @@ import { provideHttpClient } from '@angular/common/http';
 //nao precisa usar o appConfig ??????????
 bootstrapApplication(AppComponent, {
   providers: [
-    ...appRouterProviders, provideHttpClient()
+    ...appRouterProviders, provideHttpClient(),
+    importProvidersFrom(MatNativeDateModule),
   ]
 }).catch( err => console.log(err));
