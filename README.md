@@ -28,7 +28,7 @@ Developed as a full-stack application, this software facilitates the recording a
 
 
 
-## 2. Technical Architecture
+## 2. Architecture
 
 ### REST API Architecture
 
@@ -66,7 +66,7 @@ Request Body:
 
 ![image](https://github.com/user-attachments/assets/f5f1e4ec-2087-4808-9249-200c0f518142)
 
-DELETE /api/customers/{uuid}
+- DELETE /api/customers/{uuid}
 
 2. Reading API
 
@@ -126,57 +126,69 @@ Request Body:
 
 ### Entity Diagram
 
-#### Customer
+#### Customer and Reading
 ![image](https://github.com/user-attachments/assets/e5c91287-11fc-485c-822f-003f43e84ec0)
 
  
 Notes:
 Relationship
-1 - n
-( optional - otional )
-*customer can exist without being linked to reading
-*reading can have its customer_id set to null
-
-#### Reading
-![image](https://github.com/user-attachments/assets/23a291ba-53cd-455d-9d4c-6a30a787c5ea)
+1. Relationship: One-to-Many (One Customer can have multiple Readings).
+2. Entitieas relationship optional to optional.
+- *customer can exist without being linked to reading and reading can have its customer_id set to null
 
 
+### Sequence Diagram
+
+#### Flow: UI → Controller → Service → Repository (Database)
+![image](https://github.com/user-attachments/assets/2962f44f-6faa-4e09-b008-7c933b49b456)
+
+## 5. Testing Strategy
+
+### Technologies
+
+- **JUnit**: A unit testing framework for Java, allowing developers to write and run repeatable tests.
+
+- **Rest Assured**: A Java library for testing RESTful web services, simplifying the validation of responses.
+
+### Test Execution Commands
+
+- **Run all tests**:
+
+mvn test
+
+- **Run a specific test class**:
+
+mvn -Dtest=MyClassOfTests test
 
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+- **Run a specific test method**:
+mvn -Dtest=MyClassOfTests#myMethod test
 
-## Development server
+## 6. Project Deployment & Execution
 
-To start a local development server, run:
+### Backend Setup
 
-```bash
+1. Clone the repository:
+git clone https://github.com/FrotaLucas/project_final_v1.git
+
+2. Install MariaDB (https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/)
+
+3. Install Apache Maven 3.9.9 (https://maven.apache.org/download.cgi)
+
+4. Install Java HotSpot™ 21.0 (https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html)
+
+5. Run the application:
+mvn exec:java -DskipTests
+
+### Frontend Setup
+1. Clone repository
+git clone https://github.com/FrotaLucas/final_project_frontend.git
+
+2. Install Node.js and Angular CLI:
+npm install -g @angular/cli
+   
+3 install dependencies:
+npm install
+
+4 Run frontend server
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-That is how the table look like when the user want to see all reading data
-![image](https://github.com/user-attachments/assets/01320df8-2468-43d0-98d6-0feaca7076d8)
-
-
-That is a typical scenario when the manager need to update the data
-![image](https://github.com/user-attachments/assets/7641ea15-9534-4cfd-ac07-30fbd20a87c2)
-
-
-That is a typical scenario when the manager need to update the customer data
-![image](https://github.com/user-attachments/assets/876ea37d-c841-4c17-90d5-d5f2d022ba36)
-
-Add new reading for a customer
-![image](https://github.com/user-attachments/assets/256e4448-e8f1-40f6-8baa-393ee732631e)
-![image](https://github.com/user-attachments/assets/ad373875-8cb9-404a-8226-b589f0efc6f8)
-
-Add new reading when the customer does not exist customer yet
-![image](https://github.com/user-attachments/assets/d14db563-9e7e-4054-bb70-f10dac16650f)
-
-
-
