@@ -139,7 +139,7 @@ Relationship
 
 ### Sequence Diagram
 
-#### Flow: UI → Controller → Service → Repository (Database)
+#### Flow: User  →  UI Layer  →  Controllers  →  Repositories →  Database  →  MariaDB Server
 ![image](https://github.com/user-attachments/assets/2962f44f-6faa-4e09-b008-7c933b49b456)
 
 ## 5. Testing Strategy
@@ -171,24 +171,24 @@ mvn -Dtest=MyClassOfTests#myMethod test
 1. Clone the repository:
 git clone https://github.com/FrotaLucas/project_final_v1.git
 
-2. Install MariaDB (https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/)
+2. [Install MariaDB](https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/)
 
-3. Install Apache Maven 3.9.9 (https://maven.apache.org/download.cgi)
+3. [Install Apache Maven 3.9.9](https://maven.apache.org/download.cgi)
 
-4. Install Java HotSpot™ 21.0 (https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html)
+4. [Install Java HotSpot™ 21.0](https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html)
 
 5. Run the application:
-mvn exec:java -DskipTests
+- mvn exec:java -DskipTests
 
 ### Frontend Setup
 1. Clone repository
-git clone https://github.com/FrotaLucas/final_project_frontend.git
+- git clone https://github.com/FrotaLucas/final_project_frontend.git
 
 2. Install Node.js and Angular CLI:
-npm install -g @angular/cli
+- npm install -g @angular/cli
    
-3 install dependencies:
-npm install
+3. install dependencies:
+- npm install
 
-4 Run frontend server
-ng serve
+4. Run frontend server
+- ng serve
