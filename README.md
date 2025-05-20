@@ -1,4 +1,18 @@
-# FinalProjectFrontend
+# 📘 Project Documentation: Smart Utilities Management System
+
+1. Project Overview
+
+2. Technical Architecture
+
+3. Software Setup & Usage
+
+4. UML Diagram & Database Schema
+
+5. Testing Strategy
+
+6. Project Deployment & Execution
+
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
 
