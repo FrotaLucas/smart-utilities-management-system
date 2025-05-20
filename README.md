@@ -28,14 +28,16 @@ Developed as a full-stack application, this software facilitates the recording a
 
 ### Customer List Screen
 Shows all registered customers with search and action options.
+
 ![image](https://github.com/user-attachments/assets/7b553da8-f063-415e-af92-48dfe6d7947d)
 
 ### Update Customer Screen
-Allows editing customer information such as name, address, and phone.
+Allows editing customer information such as name, family name and birthdate.
+
 ![image](https://github.com/user-attachments/assets/7b902691-011b-4bef-a90c-43c724d4f23f)
 
 ### Add New Reading Screen
-Interface to record a new reading value for a customer.
+Interface to record a new reading value. If the customer does not exist, a popup will be displayed.
 
 ![image](https://github.com/user-attachments/assets/fa39a9da-841a-4679-939c-59e53d58745b)
 
