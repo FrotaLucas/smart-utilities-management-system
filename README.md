@@ -211,6 +211,6 @@ git clone https://github.com/FrotaLucas/project_final_v1.git
 - ng serve
 
 
-### Contact
+### Let's connect
 
 [LinkedIn](https://www.linkedin.com/in/lucas-dias-frota-9020b2126/)
