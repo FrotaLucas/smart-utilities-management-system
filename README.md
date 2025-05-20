@@ -26,6 +26,8 @@ Description
 
 Developed as a full-stack application, this software facilitates the recording and monitoring of utility data for clients. The fictitious company, Smart Utilities, can perform CRUD (Create, Read, Update, Delete) operations on client data and their respective utility readings.
 
+## Layout
+
 ### Customer List Screen
 Shows all registered customers with search and action options.
 
