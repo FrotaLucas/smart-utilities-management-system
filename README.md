@@ -26,6 +26,19 @@ Description
 
 Developed as a full-stack application, this software facilitates the recording and monitoring of utility data for clients. The fictitious company, Smart Utilities, can perform CRUD (Create, Read, Update, Delete) operations on client data and their respective utility readings.
 
+### Customer List Screen
+Shows all registered customers with search and action options.
+![image](https://github.com/user-attachments/assets/7b553da8-f063-415e-af92-48dfe6d7947d)
+
+### Update Customer Screen
+Allows editing customer information such as name, address, and phone.
+![image](https://github.com/user-attachments/assets/7b902691-011b-4bef-a90c-43c724d4f23f)
+
+### Add New Reading Screen
+Interface to record a new reading value for a customer.
+
+![image](https://github.com/user-attachments/assets/fa39a9da-841a-4679-939c-59e53d58745b)
+
 
 
 ## 2. Architecture
@@ -50,7 +63,7 @@ The application adheres to REST (Representational State Transfer) principles, en
 
 ### API Endpoints
 
-1. Customer API
+#### 1. Customer API #### 
 
 - POST /api/customers
 Request Body:
@@ -68,7 +81,7 @@ Request Body:
 
 - DELETE /api/customers/{uuid}
 
-2. Reading API
+#### 2. Reading API
 
 POST /api/readings
 Request Body:
@@ -133,7 +146,7 @@ Request Body:
 Notes:
 Relationship
 1. Relationship: One-to-Many (One Customer can have multiple Readings).
-2. Entitieas relationship optional to optional.
+2. Key caractheristics of Entitieas: optional to optional. 
 - *customer can exist without being linked to reading and reading can have its customer_id set to null
 
 
@@ -192,3 +205,8 @@ git clone https://github.com/FrotaLucas/project_final_v1.git
 
 4. Run frontend server
 - ng serve
+
+
+### Contact
+
+[LinkedIn](https://www.linkedin.com/in/lucas-dias-frota-9020b2126/)
