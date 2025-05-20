@@ -171,15 +171,15 @@ Relationship
 
 - **Run all tests**:
 
-mvn test
+**mvn test**
 
 - **Run a specific test class**:
 
-mvn -Dtest=MyClassOfTests test
+**mvn -Dtest=MyClassOfTests test**
 
 
 - **Run a specific test method**:
-mvn -Dtest=MyClassOfTests#myMethod test
+**mvn -Dtest=MyClassOfTests#myMethod test**
 
 ## 6. Project Deployment & Execution
 
