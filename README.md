@@ -169,17 +169,14 @@ Relationship
 
 ### Test Execution Commands
 
-- **Run all tests**:
+- **Run all tests**:  
+  Execute `mvn test`.
 
-**mvn test**
+- **Run a specific test class**:  
+  Use `mvn -Dtest=MyClassOfTests test`.
 
-- **Run a specific test class**:
-
-**mvn -Dtest=MyClassOfTests test**
-
-
-- **Run a specific test method**:
-**mvn -Dtest=MyClassOfTests#myMethod test**
+- **Run a specific test method**:  
+  Execute `mvn -Dtest=MyClassOfTests#myMethod test`.
 
 ## 6. Project Deployment & Execution
 
