@@ -63,7 +63,6 @@ The application adheres to REST (Representational State Transfer) principles, en
 
 **5. Cacheability**: Responses must define themselves as cacheable or not to prevent clients from reusing stale or inappropriate data.
 
-**6. Code on Demand (Optional)**: Servers can extend client functionality by transferring executable code.
 
 ### API Endpoints
 
