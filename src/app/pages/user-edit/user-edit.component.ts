@@ -48,6 +48,7 @@ export class UserEditComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.form.reset();
     console.log('change');
   }
 }
