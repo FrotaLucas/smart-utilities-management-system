@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule} from '@angular/router';
+import { Router, RouterModule} from '@angular/router';
 
 import { DatabaseService } from '../../services/database.service';
 
@@ -15,7 +15,7 @@ export class MainLayoutComponent implements OnInit{
    title = 'final_project_frontend';
   
   
-    constructor(private dataBaseService: DatabaseService){
+    constructor(private router: Router ,private dataBaseService: DatabaseService){
   
     }
   
@@ -26,6 +26,11 @@ export class MainLayoutComponent implements OnInit{
     resetDatabase(): void{
       this.dataBaseService.deleteDatabase().subscribe();
       console.log("delete");
+    }
+
+
+    logout(): void{
+      this.router.navigate(['/login'])
     }
   }
   
