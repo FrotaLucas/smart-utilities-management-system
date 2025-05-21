@@ -28,9 +28,12 @@ export class MainLayoutComponent implements OnInit{
       console.log("delete");
     }
 
-
     logout(): void{
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']);
+    }
+
+    account(): void {
+      this.router.navigate(['user/edit']);
     }
   }
   
