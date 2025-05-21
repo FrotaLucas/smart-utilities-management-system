@@ -9,7 +9,9 @@ import { ReadingComponent } from './components/reading/reading.component';
 import { AddReadingComponent } from './components/reading/add-reading/add-reading.component';
 import { ChartComponent } from './components/chart/chart.component';
 
-
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { LoginComponent } from './pages/login/login.component';
 //I am using standalone arquitecture
 //benefits:
 //Suitable for small, modular, or isolated components.
@@ -17,28 +19,28 @@ import { ChartComponent } from './components/chart/chart.component';
 //large enterprise applications like E-commmerce Platform.
 
 
+
 export const routes: Routes = [
-    {
-      path: 'customer', component: CustomerComponent,
-      children: [
-        // { path: 'api', component: ComponentChildren inside of CustomerComponent, shared Tab }
-      ]
-    },
-    {
-      path: 'customer/add', component: AddCustomerComponent
-    },
-    {
-      path: 'reading', component: ReadingComponent
-    },
-    {
-      path: 'reading/add', component: AddReadingComponent
-    },
-    {
-      path: 'analytics', component: ChartComponent
-    }
-    // { path: '', redirectTo: 'customer', pathMatch: 'full' },
-    // { path: '**', redirectTo: 'customer' }
-  ];
+  {
+    path: '',
+    component: MainLayoutComponent,
+    children: [
+      { path: 'customer', component: CustomerComponent },
+      { path: 'customer/add', component: AddCustomerComponent },
+      { path: 'reading', component: ReadingComponent },
+      { path: 'reading/add', component: AddReadingComponent },
+      { path: 'analytics', component: ChartComponent }
+    ]
+  },
+  {
+    path: '',
+    component: AuthLayoutComponent,
+    children: [
+      { path: 'login', component: LoginComponent }
+    ]
+  },
+  { path: '**', redirectTo: 'login' }
+];
 
 export const appRouterProviders = [
     provideRouter(routes)
