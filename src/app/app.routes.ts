@@ -12,6 +12,7 @@ import { ChartComponent } from './components/chart/chart.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
+import { UserEditComponent } from './pages/user-edit/user-edit.component';
 //I am using standalone arquitecture
 //benefits:
 //Suitable for small, modular, or isolated components.
@@ -29,7 +30,8 @@ export const routes: Routes = [
       { path: 'customer/add', component: AddCustomerComponent },
       { path: 'reading', component: ReadingComponent },
       { path: 'reading/add', component: AddReadingComponent },
-      { path: 'analytics', component: ChartComponent }
+      { path: 'analytics', component: ChartComponent },
+      { path: 'user/edit', component: UserEditComponent}
     ]
   },
   {
