@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+}
+
+
+header {
+  background-image: linear-gradient(white, blue);
+  min-height: 150px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+header > h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+header > p {
+  color: white;
+  font-size: 15px;
+  /* margin-bottom: 10rem; */
+  /* font-family: var(--fonte-standart); */
+}
+
+/* .innner-container {
+    width: 100%;
+    
+} */
