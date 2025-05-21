@@ -47,7 +47,8 @@ export class ShowCustomerComponent implements OnInit, AfterViewInit {
   //myList: Customer[] = list;
   //nameTest: string = "mensage";
 
-  constructor(private router: Router, private dialog: MatDialog, private _customerService: CustomerService, private snackBar: MatSnackBar) {
+  constructor(private router: Router, private dialog: MatDialog, private _customerService: CustomerService,
+    private snackBar: MatSnackBar) {
     this.dataSource = new MatTableDataSource();
   }
 
@@ -91,12 +92,12 @@ export class ShowCustomerComponent implements OnInit, AfterViewInit {
     }
     );
 
-   this.snackBar.open( 'successfully deleted','', {duration: 2000});
+    this.snackBar.open('successfully deleted', '', { duration: 2000 });
   }
 
   applyFilter(event: Event) {
-      const filteredData = (event.target as HTMLInputElement).value;
-      this.dataSource.filter = filteredData.trim().toLowerCase();
+    const filteredData = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filteredData.trim().toLowerCase();
   }
 
   exportData(): void {
