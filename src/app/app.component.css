@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
 }
 
@@ -20,11 +20,9 @@ header > h1 {
 header > p {
   color: white;
   font-size: 15px;
-  /* margin-bottom: 10rem; */
-  /* font-family: var(--fonte-standart); */
+
 }
 
 .innner-container {
     width: 100%;
-    /* margin: 0 auto; */
-}
+} */
