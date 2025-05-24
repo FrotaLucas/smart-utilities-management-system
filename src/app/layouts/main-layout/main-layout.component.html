@@ -1,0 +1,51 @@
+<div>
+
+  <header>
+    <h1>Smart Utilities</h1>
+    <p>your smart solution for energy and water consumption management</p>
+  </header>
+
+  
+  <nav>
+    <ul class="my-nav-bar">
+
+      <div class="commands">
+        <li >
+          <a routerLink="/customer" class="m-1 btn btn-light btn-outline-primary">Customers</a>
+        </li>
+  
+        <li class="nav-item">
+          <a routerLink="/reading" class="m-1 btn btn-light btn-outline-primary">Readings</a>
+        </li>
+  
+        <li class="nav-item">
+          <a routerLink="/analytics" class="m-1 btn btn-light btn-outline-primary">Analytics</a>
+        </li>
+  
+         <li class="nav-item">
+          <button class="m-1 btn btn-light btn-outline-primary">Reset Database</button>
+        </li>
+      </div>
+
+      <li class="nav-item dropdown">
+        <a class="btn btn-light btn-outline-primary dropdown-toggle m-1" href="#" id="adminDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="adminDropdown">
+          <a class="dropdown-item" routerLink="/user/edit">Profile</a>
+          <a class="dropdown-item" routerLink="/user/edit">Account</a>
+          <a class="dropdown-item" routerLink="/user/edit">Settings</a>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item logout-button" (click)="logout()">Logout</button>
+        </div>
+      </li>
+
+
+    </ul>
+  </nav>
+
+
+</div>
+
+<router-outlet></router-outlet>

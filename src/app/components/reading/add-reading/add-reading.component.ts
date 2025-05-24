@@ -15,6 +15,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddCustomerComponent } from '../../customer/add-customer/add-customer.component';
 
+import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-add-reading',
   imports: [CommonModule,
@@ -26,6 +28,7 @@ import { AddCustomerComponent } from '../../customer/add-customer/add-customer.c
     MatDatepickerModule,
     MatNativeDateModule,
   ],
+  providers: [DatePipe],
   templateUrl: './add-reading.component.html',
   styleUrl: './add-reading.component.css'
 })
@@ -35,7 +38,7 @@ export class AddReadingComponent implements OnInit {
   mylist: Reading[] = listOfreading;
 
   constructor(private fb: FormBuilder, private _readingService: ReadingService, 
-    private dialog: MatDialog, private snackBar: MatSnackBar ) { }
+    private dialog: MatDialog, private snackBar: MatSnackBar, private datePipe: DatePipe ) { }
 
   ngOnInit(): void {
     this.form = this.fb
@@ -50,26 +53,23 @@ export class AddReadingComponent implements OnInit {
       )
   }
 
-  formatDate(date: Date): string {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // mês começa em 0
-    const year = date.getFullYear();
-    return `${year}-${month}-${day}`;
-  }
+ 
 
   onSubmit(): void {
+
     if (this.form.valid) {
       const reading: Reading = {
         ...this.form.value,
         substitute: false,
         customer: {
           id: this.form.value.customerId,
-          gender: "M",
-          birthDate: "1800-01-01"
+          gender: "M", //no effect in backend
+          birthDate: "1800-01-01" //no effect in backend
         }
       };
 
-      reading.dateOfReading = this.formatDate(new Date(reading.dateOfReading));
+      const formattedDate = this.datePipe.transform(reading.dateOfReading);
+      reading.dateOfReading = formattedDate as any;
 
       if( !this.form.value.customerId){
 
@@ -86,8 +86,6 @@ export class AddReadingComponent implements OnInit {
             this.form.reset();
             this.snackBar.open("customer created and reading saved successfully", " ", {duration: 2000});
           }
-        
-
         })
       }
 

@@ -56,7 +56,7 @@ export class ShowReadingComponent implements OnInit, AfterViewInit {
 
   refreshPage(): void {
     this._readingService.getReadings().subscribe(data => {
-      //this.listOfReading = data;
+      this.listOfReading = data;
       this.dataSource.data = data;
       this.dataSource.paginator = this.refPaginator;
       this.dataSource.sort = this.refMatSort;

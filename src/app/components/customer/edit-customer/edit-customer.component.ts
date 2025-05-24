@@ -62,7 +62,7 @@ export class EditCustomerComponent implements OnInit {
       console.log('updated customer', this.customer);
 
       this._customerService.updateCustomer(this.customer).subscribe();
-      this.snackBar.open("reading successfully updated", "", { duration: 2000 });
+      this.snackBar.open("customer successfully updated", "", { duration: 2000 });
       this.dialogRef.close(this.form.value);
     }
   }

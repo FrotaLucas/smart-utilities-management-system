@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="user-edit-container">
+
+    <mat-label>Email:</mat-label>
+    <div>
+        <mat-form-field class="input" appearance="outline">
+            <input matInput formControlName="email" (focus)="clearField('email')" #emailInput />
+        </mat-form-field>
+
+        <mat-icon mat-icon-button (click)="edit()" class="icon edit-icon" style="margin-left: 10px;" matTooltip="Edit">
+            <mat-icon>edit</mat-icon>
+        </mat-icon>
+    </div>
+
+
+    <mat-label>New password</mat-label>
+
+    <mat-form-field class="input" appearance="outline">
+        <input matInput  placeholder="password"  type="password" formControlName="password">
+    </mat-form-field>
+
+    <mat-label>Confirm your password</mat-label>
+    <mat-form-field class="input" appearance="outline">
+        <input matInput placeholder="password"  type="password" formControlName="confirmPassword">
+    </mat-form-field>
+
+    <div style="margin-top: 20px;">
+        <button mat-raised-button color="primary" type="submit">
+            Change password
+        </button>
+    </div>
+
+</form>
