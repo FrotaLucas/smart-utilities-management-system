@@ -31,7 +31,8 @@ Developed as a full-stack application, this software facilitates the recording a
 ### Reading List Screen
 Shows all stored reading data for customers.
 
-![image](https://github.com/user-attachments/assets/4dcc8786-7591-4ee3-aa6e-447c6dc70054)
+![image](https://github.com/user-attachments/assets/4cefeb15-2b84-47f6-8d36-56bbcd256227)
+
 
 ### Update Customer Screen
 Allows editing customer information such as name, family name and birthdate.
