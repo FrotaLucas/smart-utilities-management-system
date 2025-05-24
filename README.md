@@ -66,7 +66,7 @@ The application adheres to REST (Representational State Transfer) principles, en
 
 **3. Uniform Interface**: Defines a standardized way of communicating between client and server. Standard URIs for Resource Identification, a consistent representation of messages (such as JSON or XML), and the use of HTTP methods (GET, POST, PUT, DELETE, etc.) according to RESTful principles ensure a uniform and scalable API design.
 
-**4. Layered System**:  RESTful arquitecture are built in hierarchical layers, allowing components to operate independently. Client → Proxy or Cache → Backend Server.
+**4. Layered System**:  RESTful arquitecture are built in hierarchical layers, allowing components to operate independently. Client → Proxy or Cache → Load Balancer → Backend Server.
 
 **5. Cacheability**: The server can indicate whether a response is cacheable by the browser (e.g., using headers like Cache-Control: max-age=3600 or Expires: [date]). This allows the browser to retrieve data from the cache, reducing latency and improving performance.
 
