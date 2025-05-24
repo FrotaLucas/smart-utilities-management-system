@@ -29,7 +29,7 @@ Developed as a full-stack application, this software facilitates the recording a
 ## Layout
 
 ### Reading List Screen
-Shows all stored data from the customers.
+Shows all stored reading data for customers.
 
 ![image](https://github.com/user-attachments/assets/4dcc8786-7591-4ee3-aa6e-447c6dc70054)
 
@@ -47,7 +47,8 @@ Interface to record a new reading value. If the customer does not exist, a popup
 
 ### Login Screen
 
-![image](https://github.com/user-attachments/assets/a511123b-744b-4367-b9e9-335c1e13bf3c)
+![image](https://github.com/user-attachments/assets/2d2211f8-4290-4c5e-b258-4c033492fe1e)
+
 
 
 ## 2. Architecture
