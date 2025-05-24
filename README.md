@@ -112,8 +112,9 @@ Request Body:
 ### Technologies Used
 
 #### Backend
-- **Framework**: Spring Boot (Java)  
-- **IDE**: IntelliJ IDEA  
+- **Framework**: Jersey for building API RESTful and configuring the HTTP Server manually, Jakarta is used for annotations such as @PATH/@GET, Jackson handles JSON serialization, and Maven for dependency management and project execution.
+- **IDE**: IntelliJ IDEA
+- ** I chose not to use Spring in order to get a deep understanding by manually configuring HTTP server and the JSON serialization processes.
 
 #### Frontend
 - **Framework**: [Angular](https://angular.io/) with [Angular Material](https://material.angular.io/)  
