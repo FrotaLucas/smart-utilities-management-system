@@ -28,21 +28,26 @@ Developed as a full-stack application, this software facilitates the recording a
 
 ## Layout
 
-### Customer List Screen
-Shows all registered customers with search and action options.
+### Reading List Screen
+Shows all stored data from the customers.
 
-![image](https://github.com/user-attachments/assets/7b553da8-f063-415e-af92-48dfe6d7947d)
+![image](https://github.com/user-attachments/assets/4dcc8786-7591-4ee3-aa6e-447c6dc70054)
 
 ### Update Customer Screen
 Allows editing customer information such as name, family name and birthdate.
 
-![image](https://github.com/user-attachments/assets/7b902691-011b-4bef-a90c-43c724d4f23f)
+![image](https://github.com/user-attachments/assets/1125c9fe-3b28-416c-b429-8e9d97eb193b)
+
 
 ### Add New Reading Screen
 Interface to record a new reading value. If the customer does not exist, a popup will be displayed.
 
-![image](https://github.com/user-attachments/assets/fa39a9da-841a-4679-939c-59e53d58745b)
+![image](https://github.com/user-attachments/assets/00328a02-d891-478e-95bd-af0a56fca147)
 
+
+### Login Screen
+
+![image](https://github.com/user-attachments/assets/a511123b-744b-4367-b9e9-335c1e13bf3c)
 
 
 ## 2. Architecture
