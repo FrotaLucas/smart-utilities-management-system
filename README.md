@@ -24,7 +24,7 @@ To streamline the management of utilities (gas, water, and electricity) by provi
 
 Description
 
-Developed as a full-stack application, this software facilitates the recording and monitoring of utility data for clients. The fictitious company, Smart Utilities, can perform CRUD (Create, Read, Update, Delete) operations on client data and their respective utility readings.
+This full-stack application allows Smart Utilities to record and monitor client utility data via a RESTful API, supporting the full lifecycle of client and reading data management.
 
 ## Layout
 
