@@ -64,7 +64,7 @@ The application adheres to REST (Representational State Transfer) principles, en
 
 **2. Client-Server Architecture**: Separates the user interface concerns from the data storage concerns, allowing the client and server to evolve independently.
 
-**3. Uniform Interface**: Defines a standardized way of communicating between client and server, simplifying and decoupling the architecture.
+**3. Uniform Interface**: Defines a standardized way of communicating between client and server. Standard URIs for Resource Identification, a consistent representation of messages (such as JSON or XML), and the use of HTTP methods (GET, POST, PUT, DELETE, etc.) according to RESTful principles ensure a uniform and scalable API design.
 
 **4. Layered System**:  RESTful arquitecture are built in hierarchical layers, allowing components to operate independently. Client → Proxy or Cache → Backend Server.
 
