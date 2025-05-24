@@ -13,6 +13,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DatePipe } from '@angular/common';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -39,7 +40,7 @@ export class EditReadingComponent implements OnInit {
   form!: FormGroup;
 
   constructor(private fb: FormBuilder, private _readingService: ReadingService,
-    @Inject(MAT_DIALOG_DATA) private reading: Reading,
+    @Inject(MAT_DIALOG_DATA) private reading: Reading, private snackBar: MatSnackBar,
     private dialogRef: MatDialogRef<EditReadingComponent>, private datePipe: DatePipe) {
 
   }
@@ -71,6 +72,8 @@ export class EditReadingComponent implements OnInit {
       //console.log('updated customer', this.reading);
 
       this._readingService.updateReading(this.reading).subscribe();
+      this.snackBar.open("data successfully updated", "", { duration: 2000 });
+
       this.dialogRef.close(this.form.value);
     }
   }
