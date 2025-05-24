@@ -7,7 +7,7 @@ import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { MatTooltip } from '@angular/material/tooltip';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-edit',
@@ -24,7 +24,7 @@ export class UserEditComponent implements OnInit {
   form!: FormGroup;
   @ViewChild('emailInput') refEmail!: ElementRef;
 
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar){
 
   }
 
@@ -50,5 +50,6 @@ export class UserEditComponent implements OnInit {
   onSubmit(): void {
     this.form.reset();
     console.log('change');
+    this.snackBar.open("password updated", "", { duration: 2000 });
   }
 }
