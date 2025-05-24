@@ -114,7 +114,7 @@ Request Body:
 #### Backend
 - **Framework**: Jersey for building API RESTful and configuring the HTTP Server manually, Jakarta is used for annotations such as @PATH/@GET, Jackson handles JSON serialization, and Maven for dependency management and project execution.
 - **IDE**: IntelliJ IDEA
-- ** I chose not to use Spring in order to get a deep understanding by manually configuring HTTP server and the JSON serialization processes.
+> *I chose not to use Spring in order to get a deep understanding by manually configuring HTTP server and the JSON serialization processes.* <
 
 #### Frontend
 - **Framework**: [Angular](https://angular.io/) with [Angular Material](https://material.angular.io/)  
@@ -158,7 +158,7 @@ Notes:
 Relationship
 1. Relationship: One-to-Many (One Customer can have multiple Readings).
 2. Key caractheristics of Entitieas: optional to optional. 
-- *customer can exist without being linked to reading and reading can have its customer_id set to null
+> *Note: customer can exist without being linked to reading and reading can have its customer_id set to null* <
 
 
 ### Sequence Diagram
