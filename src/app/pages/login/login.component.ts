@@ -28,7 +28,7 @@ export class LoginComponent {
     if(result){
       this.router.navigate(['/customer']);
     } else {
-       this.errorMsg = 'incorrect username or password';
+       this.errorMsg = 'incorrect username or password!';
     }
   }
 }
