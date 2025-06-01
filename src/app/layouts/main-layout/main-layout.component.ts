@@ -29,11 +29,10 @@ export class MainLayoutComponent implements OnInit{
     }
 
     logout(): void{
-      this.router.navigate(['/login']);
+      this.router.navigate(['/auth/login']);
     }
 
     account(): void {
-      this.router.navigate(['user/edit']);
     }
   }
   
