@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../auth-service';
+import { AuthService } from '../../auth/auth-service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -24,9 +24,9 @@ export class LoginComponent {
   }
 
   login(): void {
-    const result = this.auth.login(this.username, this.password);
+    const result = this.auth.validateCredentials(this.username, this.password);
     if(result){
-      this.router.navigate(['/customer']);
+      this.router.navigate(['/dashboard/customer']);
     } else {
        this.errorMsg = 'incorrect username or password!';
     }
