@@ -4,6 +4,7 @@ import { Router, CanActivateChildFn } from "@angular/router";
 import { AuthService } from "./auth-service";
 import { Inject } from "@angular/core";
 
+//CanActivateChildFn has return type bool
 export const AuthGuard: CanActivateChildFn = () => {
     
     const auth = Inject(AuthService);
