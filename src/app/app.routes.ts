@@ -13,6 +13,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
+import { AuthGuard } from './auth/auth-guard';
 //I am using standalone arquitecture
 //benefits:
 //Suitable for small, modular, or isolated components.
@@ -30,6 +31,7 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: MainLayoutComponent,
+    canActivateChild: [AuthGuard],
     children: [
       { path: 'customer', component: CustomerComponent },
       { path: 'reading', component: ReadingComponent },
@@ -39,6 +41,7 @@ export const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
+    canActivateChild: [AuthGuard],
     children: [
       { path: 'customer/add', component: AddCustomerComponent },
       { path: 'reading/add', component: AddReadingComponent },
