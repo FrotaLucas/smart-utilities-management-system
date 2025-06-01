@@ -13,6 +13,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
+import { AuthGuard } from './auth/auth-guard';
 //I am using standalone arquitecture
 //benefits:
 //Suitable for small, modular, or isolated components.
@@ -22,6 +23,11 @@ import { UserEditComponent } from './pages/user-edit/user-edit.component';
 
 
 export const routes: Routes = [
+  {
+    path: '',    //rota vazia 
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
+  },
   {
     path: '',
     component: MainLayoutComponent,
@@ -35,13 +41,13 @@ export const routes: Routes = [
     ]
   },
   {
-    path: '',
+    path: 'auth',
     component: AuthLayoutComponent,
     children: [
       { path: 'login', component: LoginComponent }
     ]
   },
-  { path: '**', redirectTo: 'login' }
+  { path: '**', redirectTo: 'auth/login' }, //rota errada
 ];
 
 export const appRouterProviders = [
