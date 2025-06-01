@@ -2,7 +2,7 @@
 //qual a diferenca entre CanActivateChildFn e CanActivateChild
 import { Router, CanActivateChildFn } from "@angular/router";
 import { AuthService } from "./auth-service";
-import { Inject, Injectable } from "@angular/core";
+import { Inject } from "@angular/core";
 
 export const AuthGuard: CanActivateChildFn = () => {
     
