@@ -9,7 +9,7 @@ export class AuthService{
 
     private isAuthtenticated = new BehaviorSubject<boolean>(false);
 
-    login(user: string, password: string) : boolean{
+    validateCredentials(user: string, password: string) : boolean{
         if(user == 'admin@hotmail.com' && password == 'admin'){
             this.isAuthtenticated.next(true);
             return true;
@@ -18,12 +18,12 @@ export class AuthService{
         return false;
     }
 
-    logout(): boolean{
+    clearCredentials(): boolean{
         this.isAuthtenticated.next(false);
         return false;
     }
 
-    isLoggedin(): boolean {
+    getAuthStatus(): boolean {
         return this.isAuthtenticated.value;
     }
 }

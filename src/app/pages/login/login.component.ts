@@ -24,7 +24,7 @@ export class LoginComponent {
   }
 
   login(): void {
-    const result = this.auth.login(this.username, this.password);
+    const result = this.auth.validateCredentials(this.username, this.password);
     if(result){
       this.router.navigate(['/customer']);
     } else {
