@@ -13,7 +13,6 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
-import { AuthGuard } from './auth/auth-guard';
 //I am using standalone arquitecture
 //benefits:
 //Suitable for small, modular, or isolated components.
@@ -24,19 +23,25 @@ import { AuthGuard } from './auth/auth-guard';
 
 export const routes: Routes = [
   {
-    path: '',    //rota vazia 
+    path: '',    //rota vazia ou quando o programa abre redireciona para auth/login
     redirectTo: 'auth/login',
     pathMatch: 'full'
+  },
+  {
+    path: 'dashboard',
+    component: MainLayoutComponent,
+    children: [
+      { path: 'customer', component: CustomerComponent },
+      { path: 'reading', component: ReadingComponent },
+      { path: 'analytics', component: ChartComponent },
+    ]
   },
   {
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: 'customer', component: CustomerComponent },
       { path: 'customer/add', component: AddCustomerComponent },
-      { path: 'reading', component: ReadingComponent },
       { path: 'reading/add', component: AddReadingComponent },
-      { path: 'analytics', component: ChartComponent },
       { path: 'user/edit', component: UserEditComponent}
     ]
   },
@@ -47,7 +52,7 @@ export const routes: Routes = [
       { path: 'login', component: LoginComponent }
     ]
   },
-  { path: '**', redirectTo: 'auth/login' }, //rota errada
+  { path: '**', redirectTo: 'auth/login' }, //rota errada redireciona para auth/login
 ];
 
 export const appRouterProviders = [
