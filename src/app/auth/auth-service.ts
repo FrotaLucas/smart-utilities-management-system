@@ -2,15 +2,15 @@ import { Injectable } from "@angular/core"
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({
-        providedIn: 'root'
+    providedIn: 'root'
 })
 
-export class AuthService{
+export class AuthService {
 
     private isAuthtenticated = new BehaviorSubject<boolean>(false);
 
-    validateCredentials(user: string, password: string) : boolean{
-        if(user == 'admin@hotmail.com' && password == 'admin'){
+    validateCredentials(user: string, password: string): boolean { //nao poderia ser void e ?
+        if (user == 'admin@hotmail.com' && password == 'admin') {
             this.isAuthtenticated.next(true);
             return true;
         }
@@ -18,7 +18,7 @@ export class AuthService{
         return false;
     }
 
-    clearCredentials(): boolean{
+    clearCredentials(): boolean {
         this.isAuthtenticated.next(false);
         return false;
     }
