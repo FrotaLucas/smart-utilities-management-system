@@ -26,7 +26,7 @@ export class LoginComponent {
   login(): void {
     const result = this.auth.validateCredentials(this.username, this.password);
     if(result){
-      this.router.navigate(['/customer']);
+      this.router.navigate(['/dashboard/customer']);
     } else {
        this.errorMsg = 'incorrect username or password!';
     }
