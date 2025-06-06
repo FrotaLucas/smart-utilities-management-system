@@ -92,7 +92,7 @@ Request Body:
 
 #### 2. Reading API
 
-- POST /api/readings
+- POST /api/readings<br>
 Request Body:
 
 ![image](https://github.com/user-attachments/assets/10cf1ab6-37a4-4432-9400-faa4581c03c8)
@@ -101,7 +101,7 @@ Request Body:
 
 - GET /api/readings
 
-- PUT /api/readings
+- PUT /api/readings<br>
 Request Body:
 
 ![image](https://github.com/user-attachments/assets/bd175b2c-ada4-47bc-81f9-918e279f5854)
