@@ -83,7 +83,7 @@ The application adheres to REST (Representational State Transfer) principles, en
 
 - GET /api/customers
 
-- PUT /api/customers
+- PUT /api/customers<br>
 Request Body:
 
 ![image](https://github.com/user-attachments/assets/f5f1e4ec-2087-4808-9249-200c0f518142)
