@@ -75,8 +75,7 @@ The application adheres to REST (Representational State Transfer) principles, en
 
 #### 1. Customer API #### 
 
-- POST /api/customers
-Request Body:
+- POST /api/customers  Request Body:
 
 ![image](https://github.com/user-attachments/assets/658ce419-b084-4ddf-b877-3ae937de3f29)
 
