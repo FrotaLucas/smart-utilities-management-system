@@ -60,7 +60,7 @@ The application adheres to REST (Representational State Transfer) principles, en
 
 ### Key Characteristics of REST:
 
-**1 Statelessness**: Each request from the client must contain all the information needed to process the request. The server does not store any client context between requests, enhancing scalability and reliability.
+**1. Statelessness**: Each request from the client must contain all the information needed to process the request. The server does not store any client context between requests, enhancing scalability and reliability.
 
 **2. Client-Server Architecture**: Separates the user interface concerns from the data storage concerns, allowing the client and server to evolve independently.
 
