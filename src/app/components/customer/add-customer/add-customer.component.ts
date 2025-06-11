@@ -77,7 +77,7 @@ export class AddCustomerComponent implements OnInit {
         this.data.reading.customer.lastName = customer.lastName;
         this.data.reading.customer.gender = customer.gender;
         this.data.reading.customer.birthDate = customer.birthDate;
-       
+
         console.log(this.data.reading.customer);
 
         this._readingService.addReading(this.data.reading).subscribe(
