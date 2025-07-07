@@ -14,6 +14,13 @@
 
 ## 1. Project Overview
 
+## Layout
+
+### Reading List Screen
+Shows all stored reading data for customers.
+
+![image](https://github.com/user-attachments/assets/4cefeb15-2b84-47f6-8d36-56bbcd256227)
+
 ## Project Title
 
 ### Smart Utilities Management System
@@ -25,14 +32,6 @@ To streamline the management of utilities (gas, water, and electricity) by provi
 Description
 
 This full-stack application allows Smart Utilities to record and monitor client utility data via a RESTful API, supporting the full lifecycle of client and reading data management.
-
-## Layout
-
-### Reading List Screen
-Shows all stored reading data for customers.
-
-![image](https://github.com/user-attachments/assets/4cefeb15-2b84-47f6-8d36-56bbcd256227)
-
 
 ### Update Customer Screen
 Allows editing customer information such as name, family name and birthdate.
