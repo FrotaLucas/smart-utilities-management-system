@@ -42,10 +42,15 @@ export class CustomerService {
         return this.http.delete<string>(`${this.myApp}${this.myApi}/${uuid}`);  
     }
 
-    //esta estranho retornar string. Backend retorna json !! REVISAR!!
-    updateCustomer(customer: Customer): Observable<string> {
-        return this.http.put<string>(`${this.myApp}${this.myApi}`, customer);
+    // //esta estranho retornar string. Backend retorna json !! REVISAR!!
+    // updateCustomer(customer: Customer): Observable<string> {
+    //     return this.http.put<string>(`${this.myApp}${this.myApi}`, customer);
+    // }
+
+    updateCustomer(customer : Customer): Observable<Customer> {
+        return this.http.put<Customer>(`${this.myApp}${this.myApi}`, customer);
     }
+
 
     addCustomer(customer: Customer): Observable<Customer> {
         return this.http.post<any>(`${this.myApp}${this.myApi}`, customer).pipe(
