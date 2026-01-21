@@ -32,10 +32,14 @@ export class CustomerService {
         return this.http.get<Customer[]>(`${this.myApp}${this.myApi}`);
     }
 
-    deleteCustomer(uuid: string): Observable<Customer> {
-        return this.http.delete<any>(`${this.myApp}${this.myApi}/${uuid}`).pipe(
-            map(response => response.properties.customer.properties)
-        );
+    // deleteCustomer(uuid: string): Observable<Customer> {
+    //     return this.http.delete<any>(`${this.myApp}${this.myApi}/${uuid}`).pipe(
+    //         map(response => response.properties.customer.properties)
+    //     );
+    // }
+
+    deleteCustomer(uuid: string) : Observable<string> {
+        return this.http.delete<string>(`${this.myApp}${this.myApi}/${uuid}`);  
     }
 
     //esta estranho retornar string. Backend retorna json !! REVISAR!!
