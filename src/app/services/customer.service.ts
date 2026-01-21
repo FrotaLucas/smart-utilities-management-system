@@ -52,10 +52,14 @@ export class CustomerService {
     }
 
 
-    addCustomer(customer: Customer): Observable<Customer> {
-        return this.http.post<any>(`${this.myApp}${this.myApi}`, customer).pipe(
-            map( response => response.properties.customer.properties)
-        )
+    // addCustomer(customer: Customer): Observable<Customer> {
+    //     return this.http.post<any>(`${this.myApp}${this.myApi}`, customer).pipe(
+    //         map( response => response.properties.customer.properties)
+    //     )
+    // }
+
+    addCustomer(customer : Customer) : Observable<Customer> {
+        return this.http.post<Customer>(`${this.myApp}${this.myApi}`, customer);
     }
 
      getCustomer(uuid: string): Observable<Customer> {
