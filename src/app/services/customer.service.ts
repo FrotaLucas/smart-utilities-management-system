@@ -62,9 +62,13 @@ export class CustomerService {
         return this.http.post<Customer>(`${this.myApp}${this.myApi}`, customer);
     }
 
-     getCustomer(uuid: string): Observable<Customer> {
-        return this.http.get<any>(`${this.myApp}${this.myApi}/${uuid}`).pipe(
-            map(response => response.properties.customer.properties)
-        );
+    //  getCustomer(uuid: string): Observable<Customer> {
+    //     return this.http.get<any>(`${this.myApp}${this.myApi}/${uuid}`).pipe(
+    //         map(response => response.properties.customer.properties)
+    //     );
+    // }
+
+    getCustomer(uuid : string) : Observable<Customer> {
+        return this.http.get<Customer>(`${this.myApp}${this.myApi}/${uuid}`);
     }
 }
