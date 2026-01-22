@@ -25,13 +25,7 @@ Shows all stored reading data for customers.
 
 ### Smart Utilities Management System
 
-Mission
-
-To streamline the management of utilities (gas, water, and electricity) by providing companies with a comprehensive overview of their client base and individual consumption patterns.
-
-Description
-
-This full-stack application allows Smart Utilities to record and monitor client utility data via a RESTful API, supporting the full lifecycle of client and reading data management.
+The Smart Utilities Management System aims to modernize how utility companies manage and understand gas, water, and electricity consumption through a centralized digital platform. As urban environments expand and demand for resources increases, utility companies require modern digital solutions that can scale, adapt, and provide real-time insights. This project was born from the motivation to bridge the gap between raw utility data and actionable intelligence, enabling companies to better understand consumption behavior, reduce waste, and enhance service quality. It reflects a strong desire to innovate within the utilities sector through technology, efficiency, and sustainable resource management, supporting data-driven decision-making and operational optimization.
 
 ### Update Customer Screen
 Allows editing customer information such as name, family name and birthdate.
