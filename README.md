@@ -14,24 +14,15 @@
 
 ## 1. Project Overview
 
-## Layout
+## Homepage
 
-### Reading List Screen
-Shows all stored reading data for customers.
-
-![image](https://github.com/user-attachments/assets/4cefeb15-2b84-47f6-8d36-56bbcd256227)
+![smart_1](https://github.com/user-attachments/assets/0dceb373-2abd-4a9a-9500-214902443abd)
 
 ## Project Title
 
 ### Smart Utilities Management System
 
-Mission
-
-To streamline the management of utilities (gas, water, and electricity) by providing companies with a comprehensive overview of their client base and individual consumption patterns.
-
-Description
-
-This full-stack application allows Smart Utilities to record and monitor client utility data via a RESTful API, supporting the full lifecycle of client and reading data management.
+The Smart Utilities Management System aims to modernize how utility companies manage and understand gas, water, and electricity consumption through a centralized digital platform. As urban environments expand and demand for resources increases, utility companies require modern digital solutions that can scale, adapt, and provide real-time insights. This application was born from the motivation to bridge the gap between raw utility data and actionable intelligence, enabling companies to better understand consumption behavior, reduce waste, and enhance service quality. It reflects a strong desire to innovate within the utilities sector through technology and sustainable resource management to supporting data-driven decision-making. This project is full-stack web application developed with Java Spring Boot. [Link to Backend APIs](https://github.com/FrotaLucas/smart-utilities-apis)
 
 ### Update Customer Screen
 Allows editing customer information such as name, family name and birthdate.
@@ -119,7 +110,7 @@ Request Body:
 - **IDE**: Visual Studio Code  
 
 #### Database
-- **System**: MariaDB  
+- **System**: SQL Server
 
 #### Tools
 - **API Testing**: Postman  
@@ -129,7 +120,7 @@ Request Body:
 
 ### Technology Roles
 
-- **MariaDB**: An open-source relational database management system, used to store and manage application data.
+- **SQL Server**: A relational database management system developed by Microsoft, used to store, manage, and query application data.
 
 - **Apache Maven 3.9.9**: A build automation tool primarily for Java projects, managing project dependencies and build lifecycle.
 
@@ -161,7 +152,7 @@ Relationship
 
 ### Sequence Diagram
 
-#### Flow: User  →  UI Layer  →  Controllers  →  Repositories →  Database  →  MariaDB Server
+#### Flow: User  →  UI Layer  →  Controllers  →  Repositories →  Database  →  SQL Server
 ![image](https://github.com/user-attachments/assets/2962f44f-6faa-4e09-b008-7c933b49b456)
 
 ## 5. Testing Strategy
@@ -190,7 +181,7 @@ Relationship
 1. Clone the repository:
 git clone https://github.com/FrotaLucas/project_final_v1.git
 
-2. [Install MariaDB](https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/)
+2. [Install SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
 
 3. [Install Apache Maven 3.9.9](https://maven.apache.org/download.cgi)
 
