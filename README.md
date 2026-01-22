@@ -14,6 +14,10 @@
 
 ## 1. Project Overview
 
+## Homepage
+
+![smart_1](https://github.com/user-attachments/assets/0dceb373-2abd-4a9a-9500-214902443abd)
+
 ## Layout
 
 ### Reading List Screen
