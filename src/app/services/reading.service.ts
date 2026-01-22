@@ -21,11 +21,15 @@ export class ReadingService {
         this.myApi = "api/readings";
     }
 
-    getReadings(): Observable<Reading[]> {
+    // getReadings(): Observable<Reading[]> {
 
-        return this.http.get<any>(`${this.myApp}${this.myApi}`).pipe(
-            map(response => response.properties.readings.items.properties)
-        )
+    //     return this.http.get<any>(`${this.myApp}${this.myApi}`).pipe(
+    //         map(response => response.properties.readings.items.properties)
+    //     )
+    // }
+
+    getReadins(): Observable<Reading[]> {
+        return this.http.get<Reading[]>(`${this.myApp}${this.myApi}`);
     }
 
     deleteReading(uuid: string): Observable<void> {
