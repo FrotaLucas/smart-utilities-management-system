@@ -181,7 +181,7 @@ Relationship
 1. Clone the repository:
 git clone https://github.com/FrotaLucas/project_final_v1.git
 
-2. [Install MariaDB](https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
+2. [Install SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads).
 
 3. [Install Apache Maven 3.9.9](https://maven.apache.org/download.cgi)
 
