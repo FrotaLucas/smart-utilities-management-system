@@ -18,13 +18,6 @@
 
 ![smart_1](https://github.com/user-attachments/assets/0dceb373-2abd-4a9a-9500-214902443abd)
 
-## Layout
-
-### Reading List Screen
-Shows all stored reading data for customers.
-
-![image](https://github.com/user-attachments/assets/4cefeb15-2b84-47f6-8d36-56bbcd256227)
-
 ## Project Title
 
 ### Smart Utilities Management System
