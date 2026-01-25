@@ -21,13 +21,6 @@ export class ReadingService {
         this.myApi = "api/readings";
     }
 
-    // getReadings(): Observable<Reading[]> {
-
-    //     return this.http.get<any>(`${this.myApp}${this.myApi}`).pipe(
-    //         map(response => response.properties.readings.items.properties)
-    //     )
-    // }
-
     getReadings(): Observable<Reading[]> {
         return this.http.get<Reading[]>(`${this.myApp}${this.myApi}`);
     }
