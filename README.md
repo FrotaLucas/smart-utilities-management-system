@@ -101,9 +101,8 @@ Request Body:
 ### Technologies Used
 
 #### Backend
-- **Framework**: Jersey for building API RESTful and configuring the HTTP Server manually, Jakarta is used for annotations such as @PATH/@GET, Jackson handles JSON serialization, and Maven for dependency management and project execution.
-- **IDE**: IntelliJ IDEA
-> *I chose not to use Spring in order to get a deep understanding by manually configuring HTTP server and the JSON serialization processes.* <
+- **Framework**:The backend of this project is built using Java Spring Boot for developing RESTful APIs. Maven is used for dependency management and project execution, ensuring a standardized and efficient build process. The application integrates with Microsoft SQL Server as its relational database, using Spring Data JPA and Hibernate for object-relational mapping and database interaction. Database schema updates are managed automatically through Hibernate, streamlining development and evolution of the data model.
+- **IDE**: Visual Studio Code  
 
 #### Frontend
 - **Framework**: [Angular](https://angular.io/) with [Angular Material](https://material.angular.io/)  
