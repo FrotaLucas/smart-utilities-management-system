@@ -37,13 +37,6 @@ export class ReadingService {
         return this.http.post<Reading>(`${this.myApp}${this.myApi}`, reading);
     }
 
-    // getReading(uuid: string): Observable<Reading> {
-
-    //     return this.http.get<any>(`${this.myApp}${this.myApi}/${uuid}`).pipe(
-    //         map(response => response.properties.reading.properties)
-    //     )
-    // }
-
     getReading(uuid: string) : Observable<Reading> {
         return this.http.get<Reading>(`${this.myApp}${this.myApi}/${uuid}`);
     }
