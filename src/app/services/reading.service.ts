@@ -25,10 +25,6 @@ export class ReadingService {
         return this.http.get<Reading[]>(`${this.myApp}${this.myApi}`);
     }
 
-    // deleteReading(uuid: string): Observable<void> {
-    //     return this.http.delete<void>(`${this.myApp}${this.myApi}/${uuid}`);
-    // }
-
     deleteReading(uuid: string) : Observable<string> {
         return this.http.delete<string>(`${this.myApp}${this.myApi}/${uuid}`);  
     }
